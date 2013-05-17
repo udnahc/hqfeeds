@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1 class="text-center">Welcome</h1></div>
+
+<div class="container-fluid">
+<div class="row-fluid">
+
+<div class="form-container well">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>Please login</legend>
+      <div class="control-group">
+        <label class="control-label">User name</label>
+        <div class="controls">
+          <input id="textinput" name="textinput" class="input-xlarge" required type="text">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Password</label>
+        <div class="controls">
+          <input id="passwordinput" name="passwordinput" class="input-xlarge" required type="password">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label"></label>
+        <div class="controls">
+          <button id="giris" name="giris" class="btn btn-primary">Login</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <p class="muted">This is a demo login page <a class="text-error" href="#">click here</a> for more info.</p>
+    </div>
+   </div>

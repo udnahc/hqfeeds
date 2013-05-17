@@ -1,0 +1,24 @@
+<div class="span10" style="margin-bottom:10px;">
+  <h4> Latest feeds from {{ feed_name }} </h4>
+</div>
+{% for entry in feed.entries %}
+<div id="mini-layout" style="margin-top: 5px;margin-bottom: 15px;margin-right: 10px;padding-left:50px; border-bottom: 1px solid #E5E5E5;">
+    <div class="row">
+      <div id="blog_entry" class="pad10-top">
+	<div class="row">
+	  <div class="span9">
+	    <a href="#" onClick="$('#description_{{loop.index}}').toggle();">{{ entry.title }}
+	    </a>
+	  </div>
+	  <div class="span2">
+	    {{ entry.published }}
+	  </div>
+	</div>
+      </div>
+      <div id="description_{{loop.index}}" style="display:None;">
+	<div id="blog-link"><a href="{{entry.link}}" target="_blank"><h3>{{entry.title}}</h3></a></div>
+	<div id="decription" style="padding-bottom:15px;">{{ entry.description|safe }}</div>
+      </div>
+    </div>
+</div>
+{% endfor %}

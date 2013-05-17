@@ -1,0 +1,32 @@
+{
+  "id" : "user/15832330886150628312/state/com.google/broadcast",
+  "title" : "Rj's shared items in Google Reader",
+  "author" : "Rj",
+  "updated" : 1280335908,
+  "direction" : "ltr",
+  "items" : [ {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1280335908546",
+    "timestampUsec" : "1280335908546579",
+    "id" : "tag:google.com,2005:reader/item/d79c5af8fa561633",
+    "categories" : [ "user/15832330886150628312/state/com.google/broadcast", "user/15832330886150628312/state/com.google/read" ],
+    "title" : "Frogger",
+    "published" : 1280289600,
+    "updated" : 1280289600,
+    "alternate" : [ {
+      "href" : "http://xkcd.com/772/",
+      "type" : "text/html"
+    } ],
+    "summary" : {
+      "direction" : "ltr",
+      "content" : "<img src=\"http://imgs.xkcd.com/comics/frogger.png\" title=\"I understand you and your team worked hard on this, but when we said to make it more realistic, we meant the graphics.\" alt=\"I understand you and your team worked hard on this, but when we said to make it more realistic, we meant the graphics.\">"
+    },
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://xkcd.com/rss.xml",
+      "title" : "xkcd.com",
+      "htmlUrl" : "http://xkcd.com/"
+    }
+  } ]
+}

@@ -1,0 +1,32 @@
+{%block left_nav%}
+<div class="accordion" id="accordion2">
+{%for entry in outline%}
+  <div class="accordion-group">
+    {%if entry._outlines%}
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{loop.index}}">{{ entry.text|truncate(length=20) }}&nbsp;&nbsp;&nbsp<i class="icon-plus"></i>
+      </a>
+    </div>
+    {%if loop.index == 1 %}
+    <div id="collapse{{loop.index}}" class="accordion-body collapse in">
+    {%else%}
+    <div id="collapse{{loop.index}}" class="accordion-body collapse">
+    {%endif%}
+      <div class="accordion-inner">
+         {%for ent in entry._outlines%}
+	 <div id="blog-entries">
+               <a href="{{ url_for('index_page') }}?url={{ent.xmlUrl}}">{{ ent.text|truncate(length=20)}}</a>
+	 </div>
+         {%endfor%}
+      </div>
+    </div>
+    {%else%}
+    <div class="accordion-heading">
+      <a class="accordion-toggle"  href="{{ url_for('index_page') }}?url={{entry.xmlUrl}}">{{ entry.text|truncate(length=20) }}
+      </a>
+    </div>    
+    {%endif%}
+  </div>
+{%endfor%}
+</div>
+{%endblock%}

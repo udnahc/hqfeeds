@@ -1,0 +1,545 @@
+{
+  "friends" : [ {
+    "userIds" : [ "12051897910615658753" ],
+    "profileIds" : [ "102060286863488067148" ],
+    "contactId" : "4813875564069887159",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCMzM8MzI_-bLHCILdmNhcmRfcGhvdG8qKGY3YzRjNTM1Mzk5ZTg1YzNhZGZlM2JmODk0ZWQ0NjJkNDcyOTFlNGYwAVMV5wNsi7AL_4SsXBC-cK4iYcn1",
+    "stream" : "user/12051897910615658753/state/com.google/broadcast",
+    "flags" : 544,
+    "types" : [ 0, 1, 3, 6, 7 ],
+    "displayName" : "Vinay TR",
+    "givenName" : "Vinay",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/102060286863488067148/buzz"
+    } ]
+  }, {
+    "userIds" : [ "10487157201604358133" ],
+    "profileIds" : [ "105320326525298033412" ],
+    "contactId" : "8046769255366458092",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCISG6auVmebqSSILdmNhcmRfcGhvdG8qKDM3Y2UxOWZlYzVjYWM1ODNiZDY5ZjUyNDA5N2YyODNiYzk2NzQyMWUwASgdZvrWuqeTl50WLlBrZi1kxY69",
+    "location" : "Mysore",
+    "stream" : "user/10487157201604358133/state/com.google/broadcast",
+    "flags" : 544,
+    "types" : [ 1, 3, 6, 7 ],
+    "displayName" : "Avinasha Shastry",
+    "givenName" : "Avinasha",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "occupation" : "Student",
+    "websites" : [ {
+      "title" : "Avinasha Shastry",
+      "url" : "http://www.quora.com/avinasha-shastry"
+    }, {
+      "title" : "avishastry",
+      "url" : "http://twitter.com/avishastry"
+    }, {
+      "title" : "An Online Mag : Coming Soon",
+      "url" : "http://www.thetechfolder.com"
+    } ]
+  }, {
+    "userIds" : [ "00645026145174816641" ],
+    "profileIds" : [ "117710376466392395819" ],
+    "contactId" : "7035513722996306527",
+    "stream" : "user/00645026145174816641/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4, 6 ],
+    "displayName" : "Spurthi SV",
+    "givenName" : "Spurthi",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "websites" : [ {
+      "title" : "Spurthi SV",
+      "url" : "http://www.youtube.com/user/spurthisv"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/117710376466392395819/buzz"
+    } ]
+  }, {
+    "userIds" : [ "14151106199028711743" ],
+    "profileIds" : [ "103426600172676555685" ],
+    "contactId" : "3127255247027565871",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCKXHtv271u7GLyILdmNhcmRfcGhvdG8qKDcxMTUzNDljMGQzMzJlMzdlNWQ5YWEzY2U5Njc1MGZhMDYwNzU0NzYwAezCDhxhgYVxiYcL_xxlVnsdkC2K",
+    "stream" : "user/14151106199028711743/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4, 6, 7 ],
+    "displayName" : "Srikanth Rajan",
+    "givenName" : "Srikanth",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/103426600172676555685/buzz"
+    }, {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/sssreekant"
+    }, {
+      "title" : "Srikanth Rajan",
+      "url" : "http://www.youtube.com/user/sssreekant"
+    } ]
+  }, {
+    "userIds" : [ "11698631416542924905" ],
+    "profileIds" : [ "104530528883784532963" ],
+    "contactId" : "1664078295127127250",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCOOH_9TBgOvvPiILdmNhcmRfcGhvdG8qKDI3ZTBkYzM4OTk4M2I2OTgyYWJjNjdhMTkyZjA5NDgzNzBlNTI0MzMwAcacLSX2UI9VPGseCAsKwOR3M_h9",
+    "stream" : "user/11698631416542924905/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4 ],
+    "displayName" : "Karthik Kodiginahalli",
+    "givenName" : "Karthik",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Karthik Kodiginahalli",
+      "url" : "http://www.youtube.com/user/dollardreams"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/104530528883784532963/buzz"
+    }, {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/kodiginahalli"
+    } ]
+  }, {
+    "userIds" : [ "04179449041908207666" ],
+    "profileIds" : [ "114864645012690556049" ],
+    "contactId" : "7109603817955508473",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECJGpz-2f_PSkzgEiC3ZjYXJkX3Bob3RvKihmYjU4YmNiNjVmNTc2MjM4YjM0YTBjN2I0NDlhOTExMjI3MTg0OTJmMAF50iZNzL4dUljYLQWNenWBH0eLAA",
+    "stream" : "user/04179449041908207666/state/com.google/broadcast",
+    "flags" : 0,
+    "types" : [ 3, 4 ],
+    "displayName" : "Supreetha Sridhar",
+    "givenName" : "Supreetha",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "7634646037772359688", "2" ]
+  }, {
+    "userIds" : [ "14185297528730432881" ],
+    "profileIds" : [ "111226755637983605315" ],
+    "contactId" : "423934029908534475",
+    "photoUrl" : "/s2/photos/private/AIbEiAIAAABECMPkgbHV2NzmmwEiC3ZjYXJkX3Bob3RvKihhZTA5M2ZmOGMzN2FmZDg0NjJkNWU4MWNhMDg0ODE3MTUzZTI3OWU4MAGMYBHoxWi1ae1xJGNObQVGYLOd2g",
+    "stream" : "user/14185297528730432881/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4 ],
+    "displayName" : "Meghana Satish",
+    "givenName" : "Meghana",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ]
+  }, {
+    "userIds" : [ "08898947245442228363" ],
+    "profileIds" : [ "109838948753689353044" ],
+    "contactId" : "5761499122226258633",
+    "stream" : "user/08898947245442228363/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4, 6 ],
+    "displayName" : "bl shankarabl",
+    "givenName" : "bl",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/109838948753689353044/buzz"
+    } ]
+  }, {
+    "userIds" : [ "11890698140051415446" ],
+    "profileIds" : [ "105054737812619426752" ],
+    "contactId" : "8758976617208334697",
+    "stream" : "user/11890698140051415446/state/com.google/broadcast",
+    "flags" : 0,
+    "types" : [ 3, 4 ],
+    "displayName" : "renuka pharma krishnamurthy",
+    "givenName" : "renuka pharma",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ]
+  }, {
+    "userIds" : [ "16523792540603162867" ],
+    "profileIds" : [ "109517931242489191258" ],
+    "contactId" : "1502922147813694635",
+    "photoUrl" : "/s2/photos/private/AIbEiAIAAABECNq2pImXgZ-LhAEiC3ZjYXJkX3Bob3RvKihhMDkwMWQ1MDUzOTEwZjNmZjYxMTIyMTJiZTExNDlhNTNmMGI4YmNjMAFHABOSNJgU10HVxQS68nhfcyM1Fg",
+    "stream" : "user/16523792540603162867/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4 ],
+    "displayName" : "Sachchidananda Pai",
+    "givenName" : "Sachchidananda",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ]
+  }, {
+    "userIds" : [ "06306424599435178018" ],
+    "profileIds" : [ "115265874222383393554" ],
+    "contactId" : "4189791112677845702",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECJLW0ZeS99Ht0wEiC3ZjYXJkX3Bob3RvKig1NjUzMjQ1NDUyZWNiY2EzNmNjOGJkNmQ2YjViMzc0ZWI0NmMwYTJhMAGPrcw_WkZVytPUtnGjwpsMjdq21g",
+    "location" : "Ahmedabad",
+    "stream" : "user/06306424599435178018/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4, 6, 7 ],
+    "displayName" : "Amit Patel",
+    "givenName" : "Amit",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "occupation" : "Team Leader",
+    "websites" : [ {
+      "title" : "Blogger (Blogspot) - amit5290",
+      "url" : "http://amit5290.blogspot.com/"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/115265874222383393554/buzz"
+    }, {
+      "title" : "Google Reader",
+      "url" : "http://www.google.com/reader/shared/06306424599435178018"
+    }, {
+      "title" : "http://www.orkut.com/Main#Profile.aspx?uid=1596...",
+      "url" : "http://www.orkut.com/Main#Profile.aspx?uid=15969264360834230754"
+    }, {
+      "title" : "Picasa Web Albums - patelamit2003",
+      "url" : "http://picasaweb.google.com/patelamit2003"
+    }, {
+      "title" : "Amit Patel",
+      "url" : "http://www.youtube.com/user/patelamit2003"
+    } ]
+  }, {
+    "userIds" : [ "10862266027264975722" ],
+    "profileIds" : [ "105635218097547334506" ],
+    "contactId" : "846082315303268373",
+    "location" : "Mysore",
+    "stream" : "user/10862266027264975722/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4, 6, 7 ],
+    "displayName" : "Raahul Narayan",
+    "givenName" : "Raahul",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "websites" : [ {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/raahuln"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/105635218097547334506/buzz"
+    } ]
+  }, {
+    "userIds" : [ "10196781724127798258" ],
+    "profileIds" : [ "110174497714113026177" ],
+    "contactId" : "3663681271392228475",
+    "photoUrl" : "/s2/photos/private/AIbEiAIAAABECIGx7I26-MSZjQEiC3ZjYXJkX3Bob3RvKihiNGViYzIzNGNkZWYyZjVhZDM4YWE2MzBiNzBkNWMwOTNkZTJmYzhmMAEyBzRdHNdNdgkuA3LPbEBJ1rGqRA",
+    "stream" : "user/10196781724127798258/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4 ],
+    "displayName" : "Shuba Sahadevan",
+    "givenName" : "Shuba",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ]
+  }, {
+    "userIds" : [ "00294464120131935135" ],
+    "profileIds" : [ "104375627381115586865" ],
+    "contactId" : "5882731925050819648",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCLGS-Ma4vdbcPCILdmNhcmRfcGhvdG8qKDdkZDg0NGM4MGJiNzBiYzNhZmFlZDE5YzQ4MjAyMTMwOWM0ZjY4NzYwAVcRtm4D05CdEgvKB004Y5_RXhnG",
+    "location" : "Bengaluru(Bangalore)",
+    "stream" : "user/00294464120131935135/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4 ],
+    "displayName" : "Shreekar Shetty",
+    "givenName" : "Shreekar",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "occupation" : "Programmer / Analyst",
+    "websites" : [ {
+      "title" : "My Twitter Timeline",
+      "url" : "http://twitter.com/shreekarshetty"
+    }, {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/shreekar.shetty"
+    }, {
+      "title" : "Orkut",
+      "url" : "http://www.orkut.com/Main#Profile.aspx?uid=16251533840996175669"
+    }, {
+      "title" : "Google Reader",
+      "url" : "http://www.google.com/reader/shared/00294464120131935135"
+    }, {
+      "title" : "LinkedIn",
+      "url" : "http://www.linkedin.com/profile/view?id=30325064"
+    }, {
+      "title" : "Facebook Profile",
+      "url" : "http://www.facebook.com/shreekar.shetty"
+    } ]
+  }, {
+    "userIds" : [ "01041076083620747577" ],
+    "profileIds" : [ "102966450187412501771" ],
+    "contactId" : "5614676034674716760",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCIvq84So17yVKSILdmNhcmRfcGhvdG8qKDdiNTE1NTFhYjk4NmYwNzcwZTg4YTMxMmU2MjBhOWQ0ZTI2MWZkNTIwASYX01KxWzD3EL2BxCfEQjlgs0LI",
+    "stream" : "user/01041076083620747577/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4 ],
+    "displayName" : "Adarsh S",
+    "givenName" : "Adarsh",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/102966450187412501771/buzz"
+    }, {
+      "title" : "Adarsh S",
+      "url" : "http://www.youtube.com/user/ramavarsh"
+    }, {
+      "title" : "Google Reader",
+      "url" : "http://www.google.com/reader/shared/01041076083620747577"
+    } ]
+  }, {
+    "userIds" : [ "13247316910990142545" ],
+    "profileIds" : [ "107772400405653169659" ],
+    "contactId" : "2503260382367359626",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCPvLvPjSn8fuayILdmNhcmRfcGhvdG8qKDQ5ZjAxNWU5NGExYWYxZjE0OWEzMDY1MmNmN2Q2ZWQyMzk3OGZkOTIwARRLRvpZOSYTNqbfdHz-aFNTsLMe",
+    "location" : "Mysore",
+    "stream" : "user/13247316910990142545/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4, 6, 7 ],
+    "displayName" : "M.S Harish",
+    "givenName" : "M.S",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "M.S Harish",
+      "url" : "http://www.youtube.com/user/harishsureesh"
+    }, {
+      "title" : "YouTube - harishsureesh",
+      "url" : "http://youtube.com/user/harishsureesh"
+    }, {
+      "title" : "Google Reader",
+      "url" : "http://www.google.com/reader/shared/13247316910990142545"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/107772400405653169659/buzz"
+    } ]
+  }, {
+    "userIds" : [ "15147111192734027767" ],
+    "profileIds" : [ "104600000245904305965" ],
+    "contactId" : "3528680873547949036",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCK3e1_6g-57rPyILdmNhcmRfcGhvdG8qKDI0YzM5NDYzYTBhMGU3YjE3OWY4ZDRlNDhiYzMyZTYyMDVkZDFiNzcwAdK8Nn9GYYz2j8EFpLegUItYQWXL",
+    "stream" : "user/15147111192734027767/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4 ],
+    "displayName" : "ng harish",
+    "givenName" : "ng",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/104600000245904305965/buzz"
+    } ]
+  }, {
+    "userIds" : [ "17800000114483567887" ],
+    "profileIds" : [ "110856841761637716912" ],
+    "contactId" : "7032019002535399885",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECLCnq8j2gdDVlgEiC3ZjYXJkX3Bob3RvKihmN2JjMGU4ODYzMjJhMTRhOWI2OTM2ZjczNTgyZGUyNjhlZDI4YTAwMAFXms6rsvPTD3OW4FOX4JoEzDJikQ",
+    "stream" : "user/17800000114483567887/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4 ],
+    "displayName" : "Amit Gupta",
+    "givenName" : "Amit",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/110856841761637716912/buzz"
+    }, {
+      "title" : "Amit Gupta",
+      "url" : "http://www.youtube.com/user/amitgupta369"
+    } ]
+  }, {
+    "userIds" : [ "09707961801921868683" ],
+    "profileIds" : [ "112171365660718059356" ],
+    "contactId" : "6789099773282758641",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECNye8_POktj0qAEiC3ZjYXJkX3Bob3RvKig2Mjc3NmUyZDQ4MzUxODRhYzU1NmUxNzkyNWY2NjIzNjRhOTNlNmZmMAEJmO6K6mEvQxHRfPUdZk8IEZEtFA",
+    "location" : "Bangalore",
+    "stream" : "user/09707961801921868683/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4 ],
+    "displayName" : "Shrinath M",
+    "givenName" : "Shrinath",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "occupation" : "Software Engineer",
+    "websites" : [ {
+      "title" : "shrinathaithal",
+      "url" : "http://www.facebook.com/shrinath.aithal"
+    }, {
+      "title" : "Shrinath M",
+      "url" : "http://www.youtube.com/user/shrinathm9286"
+    }, {
+      "title" : "shrinath_m2",
+      "url" : "http://twitter.com/shrinath_m2"
+    }, {
+      "title" : "StackOverflow",
+      "url" : "http://stackoverflow.com/users/468746/shrinath"
+    }, {
+      "title" : "Shrinath m",
+      "url" : "http://pulse.yahoo.com/_LJVYYNJYJHSNKOOXRLDZDGBUZQ"
+    } ]
+  }, {
+    "userIds" : [ "00645179817976934370" ],
+    "profileIds" : [ "115300516998033800360" ],
+    "contactId" : "8673576997211516632",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECKj5hZ3O5Jar1AEiC3ZjYXJkX3Bob3RvKihmMGI4ZDBlMmQ2NDViMjM4NDgyMDFiNzQ2MDMzYzUyZTZhNWFiNTQ4MAG4PNGi8RA9qkSTpJkzLpmT2WbZ7Q",
+    "stream" : "user/00645179817976934370/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4, 6, 7 ],
+    "displayName" : "Ashraya S",
+    "givenName" : "Ashraya",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/theemeraldsoul"
+    }, {
+      "title" : "ashraya",
+      "url" : "http://pulse.yahoo.com/Ashraya"
+    }, {
+      "title" : "ashrayasshiva",
+      "url" : "http://twitter.com/Ashrayasshiva"
+    }, {
+      "title" : "http://www.facebook.com/profile.php?id=100000270579619",
+      "url" : "http://www.facebook.com/#!/profile.php?id=100000270579619"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/115300516998033800360/buzz"
+    } ]
+  }, {
+    "userIds" : [ "15833897174581133410" ],
+    "profileIds" : [ "111830758000244550567" ],
+    "contactId" : "3136188020954447149",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECKfXv-GB99KXpAEiC3ZjYXJkX3Bob3RvKihjMTRlM2RlOTdmODg5ZGNmNmU4NGIwNDQ0NDNhMzRiMGY1NjY0MmJiMAFqUBx44NGC3qtAtocyAQXgJmdLDg",
+    "location" : "Mysore",
+    "stream" : "user/15833897174581133410/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4, 6, 7 ],
+    "displayName" : "Aniruddha Shirahatti",
+    "givenName" : "Aniruddha",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "occupation" : "Sales Engineer",
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/111830758000244550567/buzz"
+    } ]
+  }, {
+    "userIds" : [ "08823050551920725400" ],
+    "profileIds" : [ "105313681407467993424" ],
+    "contactId" : "2611064067884148591",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCNDy6K3kov_eSSILdmNhcmRfcGhvdG8qKDlmMjM4MzMyYTg4ODlkODgxNjczZDM5YjkyNGE5ZWFmNjY1ZmNmM2UwAR8g5njGWHlT3FthuGhd5BWCM8Of",
+    "stream" : "user/08823050551920725400/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4, 6, 7 ],
+    "displayName" : "Vikas Gupta",
+    "givenName" : "Vikas",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Vikas Gupta",
+      "url" : "http://www.youtube.com/user/yrus2379"
+    }, {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/105313681407467993424"
+    } ]
+  }, {
+    "userIds" : [ "08592462277665089740" ],
+    "profileIds" : [ "110602992552760779485" ],
+    "contactId" : "426794716443343348",
+    "photoUrl" : "/s2/photos/private/AIbEiAIAAABECN3FrLvLsdmSkwEiC3ZjYXJkX3Bob3RvKihiYjhjYWM1ZmIyN2E2NzQxZDcxOTdjN2Q5MjFiZDZkNzFjNTRiYzZlMAFDzS6G6jkXQ8dy15p4Gx4ldMV54g",
+    "stream" : "user/08592462277665089740/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 4 ],
+    "displayName" : "raghu kumar",
+    "givenName" : "raghu",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "websites" : [ {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/ragdiv2000"
+    } ]
+  }, {
+    "userIds" : [ "15763573267596907727" ],
+    "profileIds" : [ "102912212613984069951" ],
+    "contactId" : "7564430510161021842",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCL_SuveVvpC1KCILdmNhcmRfcGhvdG8qKDZjNDAwZTJmYmQxOGQzM2U2M2FjNTYwNjcxNzg5MWFkYzZkMDk2MmEwAfjXvMtuSm1RXUVDG0aHZ-vHf6FR",
+    "stream" : "user/15763573267596907727/state/com.google/broadcast",
+    "flags" : 0,
+    "types" : [ 3, 4 ],
+    "displayName" : "varun",
+    "givenName" : "varun",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ]
+  }, {
+    "userIds" : [ "15010478933767863207" ],
+    "profileIds" : [ "102726286913703589438" ],
+    "contactId" : "1047029047418998678",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCL7s5LiO8O3qJSILdmNhcmRfcGhvdG8qKGViMmM2NmYxNmUyM2IyZWMzNzdiMzAyNDg2MGJjZTNlZDI4NGQ2M2QwAbYewPVQ8s1ycPi89-RT85A5EVjx",
+    "location" : "banglore",
+    "stream" : "user/15010478933767863207/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4 ],
+    "displayName" : "Chitra s.c",
+    "givenName" : "Chitra",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18", "2" ],
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/102726286913703589438/buzz"
+    } ]
+  }, {
+    "userIds" : [ "15832330886150628312" ],
+    "profileIds" : [ "103584987165522395708" ],
+    "contactId" : "-1",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCLyEsOrT2pvgMSILdmNhcmRfcGhvdG8qKGQ2NDBjZTU2ZDRmYWIzYTgwZjUyNDdiZTEzY2RjOGE3ZTE2MGYxZTUwAeHIjv7AZvbQzYVt_Xs8T9asxuJo",
+    "location" : "bangalore",
+    "stream" : "user/15832330886150628312/state/com.google/broadcast",
+    "flags" : 33,
+    "displayName" : "Arjuna Suresh",
+    "givenName" : "Arjuna",
+    "n" : "",
+    "p" : "",
+    "websites" : [ {
+      "title" : "My shared items in Google Reader",
+      "url" : "http://www.google.com/reader/shared/arjunasuresh3"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/103584987165522395708/buzz"
+    }, {
+      "title" : "Arjuna Suresh",
+      "url" : "http://www.youtube.com/user/arjunsuresh3"
+    }, {
+      "title" : "arjunasuresh3",
+      "url" : "http://www.linkedin.com/in/arjunasuresh3"
+    }, {
+      "title" : "Picasa Web Albums",
+      "url" : "http://picasaweb.google.com/arjunasuresh3"
+    }, {
+      "title" : "arjunsuresh",
+      "url" : "http://www.facebook.com/arjunsuresh"
+    } ],
+    "hasSharedItemsOnProfile" : false
+  } ],
+  "encodedSharersList" : "CM_lsauaDRDOrtLG5AIQ3vTxhK8F"
+}

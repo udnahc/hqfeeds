@@ -1,0 +1,375 @@
+{
+  "id" : "user/15832330886150628312/state/com.google/broadcast-friends",
+  "title" : "\"broadcast-friends\" via Rj in Google Reader",
+  "author" : "Rj",
+  "updated" : 1298599914,
+  "direction" : "ltr",
+  "items" : [ {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1298599914696",
+    "timestampUsec" : "1298599914696640",
+    "id" : "tag:google.com,2005:reader/item/c34069dd7ddbb984",
+    "categories" : [ "user/12051897910615658753/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "user/15832330886150628312/state/com.google/read", "Reach US" ],
+    "title" : "INFORMEDIA TECHNOLOGIES (MYSORE) PVT. LTD",
+    "published" : 1293118560,
+    "updated" : 1293118583,
+    "alternate" : [ {
+      "href" : "http://mcageek.blogspot.com/2010/12/informedia-technologies-mysore-pvt-ltd.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://mcageek.blogspot.com/feeds/6012755047555230692/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://mcageek.blogspot.com/2010/12/informedia-technologies-mysore-pvt-ltd.html#comment-form",
+      "title" : "0 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/12051897910615658753/state/com.google/broadcast",
+      "title" : "Vinay's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "Informedia Technologies (Mysore) Private Limited is a Mysore, India based new media technologies development and consulting company. The precursor to our current setup was conceptualised and started in 1976.<br>INFORMEDIA TECHNOLOGIES (MYSORE) PVT. LTD<br>2799/1A, 8th Cross, Adipampa Road, V V Mohalla Mysore 570002<br>Call us at +91 821 428 8765 | 98455-65147<br>Email us at mail AT inf.in"
+    },
+    "author" : "mcageek",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://mcageek.blogspot.com/feeds/posts/default",
+      "title" : "mcageek",
+      "htmlUrl" : "http://mcageek.blogspot.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1298599911328",
+    "timestampUsec" : "1298599911328117",
+    "id" : "tag:google.com,2005:reader/item/5e5aebbe92e92b39",
+    "categories" : [ "user/12051897910615658753/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "user/15832330886150628312/state/com.google/read", "About us" ],
+    "title" : "Informedia Technologies (Mysore) Pvt. Ltd.,",
+    "published" : 1293118620,
+    "updated" : 1293118636,
+    "alternate" : [ {
+      "href" : "http://mcageek.blogspot.com/2010/12/informedia-technologies-mysore-pvt-ltd_23.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://mcageek.blogspot.com/feeds/4941024743703390364/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://mcageek.blogspot.com/2010/12/informedia-technologies-mysore-pvt-ltd_23.html#comment-form",
+      "title" : "0 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/12051897910615658753/state/com.google/broadcast",
+      "title" : "Vinay's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "About us<br><br>Conceptualised and started to be a provider of apt information and invigorating knowledge, as value based services to the academic, professional and the student communities, we now cater to a whole range of client base from our original target groups to top notch corporates, individual organisations, special interest communities and others. We have over two decades of experience in this field of information analysis and dissemination services. We now provide business solutions, sales and support services in cutting edge technologies, in addition to the aforementioned services. We are backed by a strong team, who are totally invloved and highly competitive in their respective areas of specialisation.<br><br>Our Idea of Business<br><br>Our very foundation hinges on the following facts.<br><br>    * Strong ethical practices<br>    * A never ending quest to acquire knowledge<br>    * A highly flexible, but transparent approach to business<br>    * A completely transparent approach to business<br>    * Managed by a team of highly motivated persons.<br><br>Mission Statement<br>To harness existing capabilities and quickly develop new ones<br>to address the challenges and opportunities presented by the<br>ever growing needs of our customers<br><br>Vision Statement<br>Provide our unique abilities to establish and maintain<br>cutting edge solutions round the clock, across locations<br>to become a sought after solutions provider<br><br>Total Commitment<br><br>We commit ourselves to deliver the best possible quality in all our endeavors, and to live up to the highest standards, which is expected from us.<br><br>Money Matters<br><br>We offer our professional, technical abilities and our best efforts at highly competitive prices comparable to current industry trends and standards. We are always open to discuss, share ideas and work out mutually beneficial terms and conditions."
+    },
+    "author" : "mcageek",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://mcageek.blogspot.com/feeds/posts/default",
+      "title" : "mcageek",
+      "htmlUrl" : "http://mcageek.blogspot.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1298599900848",
+    "timestampUsec" : "1298599900848954",
+    "id" : "tag:google.com,2005:reader/item/510909ca7123923d",
+    "categories" : [ "user/12051897910615658753/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "user/15832330886150628312/state/com.google/read", "Careers" ],
+    "title" : "Informedia Technologies (Mysore) Pvt. Ltd.,",
+    "published" : 1293118680,
+    "updated" : 1293118696,
+    "alternate" : [ {
+      "href" : "http://mcageek.blogspot.com/2010/12/informedia-technologies-mysore-pvt-ltd_4628.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://mcageek.blogspot.com/feeds/5183047212009371643/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://mcageek.blogspot.com/2010/12/informedia-technologies-mysore-pvt-ltd_4628.html#comment-form",
+      "title" : "0 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/12051897910615658753/state/com.google/broadcast",
+      "title" : "Vinay's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "Careers<br><br>We at Informedia are bent upon surging ahead towards our mission. To achieve this we are always looking for Talented, Keen to Learn Individuals who love challenging ways to excel.<br><br>Current Openings<br><br>    * PHP Programmers<br>    * System Administrators<br>    * Business Development Executives<br>    * Internship open for freshers - Apply with Subject: Inf Internship<br><br>How to Apply?<br><br>To Apply for an job at Informedia just mail your resume to: careers [AT] inf.in"
+    },
+    "author" : "mcageek",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://mcageek.blogspot.com/feeds/posts/default",
+      "title" : "mcageek",
+      "htmlUrl" : "http://mcageek.blogspot.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1298599896097",
+    "timestampUsec" : "1298599896097684",
+    "id" : "tag:google.com,2005:reader/item/28e04581e9d7113a",
+    "categories" : [ "user/12051897910615658753/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "user/15832330886150628312/state/com.google/read", "campus connect contact us page link" ],
+    "title" : "campus connect contact us page link",
+    "published" : 1293769980,
+    "updated" : 1293770019,
+    "alternate" : [ {
+      "href" : "http://mcageek.blogspot.com/2010/12/campus-connect-contact-us-page-link.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://mcageek.blogspot.com/feeds/8000836244769499245/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://mcageek.blogspot.com/2010/12/campus-connect-contact-us-page-link.html#comment-form",
+      "title" : "0 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/12051897910615658753/state/com.google/broadcast",
+      "title" : "Vinay's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "<a href=\"http://campusconnect.infosys.com/newcontactus.aspx\">http://campusconnect.infosys.com/newcontactus.aspx</a>"
+    },
+    "author" : "mcageek",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://mcageek.blogspot.com/feeds/posts/default",
+      "title" : "mcageek",
+      "htmlUrl" : "http://mcageek.blogspot.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1298599893907",
+    "timestampUsec" : "1298599893907651",
+    "id" : "tag:google.com,2005:reader/item/4bc57ed2424fd3f2",
+    "categories" : [ "user/12051897910615658753/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "user/15832330886150628312/state/com.google/read", "GLOBAL INTERNSHIP PROGRAM IN INFOSYS" ],
+    "title" : "GLOBAL INTERNSHIP PROGRAM IN INFOSYS",
+    "published" : 1293770040,
+    "updated" : 1293770088,
+    "alternate" : [ {
+      "href" : "http://mcageek.blogspot.com/2010/12/global-internship-program-in-infosys.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://mcageek.blogspot.com/feeds/5109261758803355735/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://mcageek.blogspot.com/2010/12/global-internship-program-in-infosys.html#comment-form",
+      "title" : "0 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/12051897910615658753/state/com.google/broadcast",
+      "title" : "Vinay's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "TO APPLY FOR GLOBAL INTERNSHIP PROGRAM IN INFOSYS<br>click on the below link<br>http://www.infosys.com/InStepWeb/"
+    },
+    "author" : "mcageek",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://mcageek.blogspot.com/feeds/posts/default",
+      "title" : "mcageek",
+      "htmlUrl" : "http://mcageek.blogspot.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1298599890946",
+    "timestampUsec" : "1298599890946437",
+    "id" : "tag:google.com,2005:reader/item/ef36b9ad77c94ee3",
+    "categories" : [ "user/12051897910615658753/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "user/15832330886150628312/state/com.google/read", "New Year wishes" ],
+    "title" : "New Year wishes",
+    "published" : 1293850140,
+    "updated" : 1293850147,
+    "alternate" : [ {
+      "href" : "http://mcageek.blogspot.com/2010/12/new-year-wishes.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://mcageek.blogspot.com/feeds/8392572681463291983/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://mcageek.blogspot.com/2010/12/new-year-wishes.html#comment-form",
+      "title" : "0 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/12051897910615658753/state/com.google/broadcast",
+      "title" : "Vinay's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "Little keys open big locks<br><br>Simple words reflect great thoughts<br><br>Your smile can cure heart blocks<br><br>So keep on smiling it rocks.<br><br>Happy New Year 2011<br><br>With Love and Care,<br>Vinay.TR"
+    },
+    "author" : "mcageek",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://mcageek.blogspot.com/feeds/posts/default",
+      "title" : "mcageek",
+      "htmlUrl" : "http://mcageek.blogspot.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1298599879597",
+    "timestampUsec" : "1298599879597752",
+    "id" : "tag:google.com,2005:reader/item/3a0254466e18e4a6",
+    "categories" : [ "user/12051897910615658753/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "user/15832330886150628312/state/com.google/read", "Contact Details of Informedia Technologies" ],
+    "title" : "Contact Details of Informedia Technologies",
+    "published" : 1294576800,
+    "updated" : 1294576854,
+    "alternate" : [ {
+      "href" : "http://mcageek.blogspot.com/2011/01/contact-details-of-informedia.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://mcageek.blogspot.com/feeds/8753384481580591523/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://mcageek.blogspot.com/2011/01/contact-details-of-informedia.html#comment-form",
+      "title" : "0 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/12051897910615658753/state/com.google/broadcast",
+      "title" : "Vinay's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "Contact<br><br>How can informedia help you now?<br><br>    * I wish to be contacted by a informedia representative<br>    * I would like to submit a support request<br>    * I am a member of the press and would like to talk to you<br><br>Send an email:<br><br>    * Sales Enquiry - sales@inf.in<br>    * Jobs - careers@inf.in (More at http://www.informedia.co.in/jobs)<br>    * Corporate, Partnerships, Business and General - mail@inf.in<br><br>Contact by Phone / Fax:<br>Within India: +91 821 428 8765<br>From Outside India: +1 (415) 692 5499<br>Tech Support: +91 903 637 7300<br>Fax: +91 821 2412257<br><br>Office and Development Center:<br>I Floor, 'Aparna Arcades',<br>Adipampa Road, V V Mohalla,<br>Mysore 570 002"
+    },
+    "author" : "mcageek",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://mcageek.blogspot.com/feeds/posts/default",
+      "title" : "mcageek",
+      "htmlUrl" : "http://mcageek.blogspot.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1276100854314",
+    "timestampUsec" : "1276100854314911",
+    "id" : "tag:google.com,2005:reader/item/ff279b95982d8b0c",
+    "categories" : [ "user/15832330886150628312/state/com.google/read", "user/10487157201604358133/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends" ],
+    "title" : "FeedSquares for Chrome - Supercharge your Google Reader!",
+    "published" : 1275986520,
+    "updated" : 1331097522,
+    "alternate" : [ {
+      "href" : "http://blog.rocketinbottle.com/2010/06/feedsquares-for-chromeandroid.html",
+      "type" : "text/html"
+    } ],
+    "replies" : [ {
+      "href" : "http://blog.rocketinbottle.com/feeds/6659963754913000977/comments/default",
+      "title" : "Post Comments",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://blog.rocketinbottle.com/2010/06/feedsquares-for-chromeandroid.html#comment-form",
+      "title" : "4 Comments",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/10487157201604358133/state/com.google/broadcast",
+      "title" : "Avi's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "<div style=\"clear:both;text-align:center\"><a href=\"https://chrome.google.com/extensions/detail/ddkahgkblobiogkkeedfnjkldecloidi\"><img border=\"0\" src=\"http://lh3.ggpht.com/_dvvucIDCi0c/TA35_M5ZhMI/AAAAAAAAAMo/y9sL-3I6tlQ/s800/intro.jpg\"></a><span></span><span></span></div><div style=\"clear:both;text-align:center\"></div><div style=\"text-align:left\"><br></div><div style=\"clear:both;text-align:center\"></div><div style=\"clear:both;text-align:center\"></div><div style=\"clear:both;text-align:center\"></div><div style=\"clear:both;text-align:center\"></div><div style=\"clear:both;text-align:center\"></div><div style=\"text-align:left\"></div><div style=\"text-align:left\"></div><div style=\"text-align:left\"></div><div style=\"text-align:left\">Want a refreshing way to use Google  Reader? Check out <a href=\"https://chrome.google.com/extensions/detail/ddkahgkblobiogkkeedfnjkldecloidi\">FeedSquares  for Chrome</a> now and begin to read your favorite feeds in style! It&#39;s beautiful, it&#39;s easy to use, and Google agrees - we have just been picked by Google Chrome team as a top extension! If you are not using Google Chrome as your browser, come see <a href=\"https://chrome.google.com/extensions/detail/ddkahgkblobiogkkeedfnjkldecloidi\">one more reason</a> why you should.</div><br>Google has definitely done a great job on Google Reader's default interface. But after sticking with the same interface for years, you might be itchy for something new. If you are a visual person, or you just love to see what \"HTML5\" can really do, or you just want to try new, beautiful things, you should check out FeedSquares!<br><br><div style=\"clear:both;text-align:center\"><img border=\"0\" src=\"http://lh5.ggpht.com/_dvvucIDCi0c/TA3tcMe_QHI/AAAAAAAAAMQ/tvfBmTasMvE/s800/shot2.jpg\"></div><br><br>FeedSquares fully synchronizes your subscriptions and items' read/star  statuses from and to Google Reader. It gives you a visual, personalized lightweight listing of feed items with image  previews. It also provides easy sharing to your Reader stream, twitter and such.<br><br>Make no mistake about it, despite the ease of use, we also provide a full arsenal for the feed warriors out there to battle their unread counts. Shortcut keys is coming up in the next version.<br><br><div style=\"clear:both;text-align:center\"><img border=\"0\" src=\"http://lh5.ggpht.com/_dvvucIDCi0c/TA30gEIXrTI/AAAAAAAAAMk/AP7W6nuJ64Q/s800/shot3.jpg\"></div><br>So, news and feed lovers of the world, please do give us comments and your feedback! And hope FeedSquares will be an enjoyable experience for you all. Here's a big download button for the Chrome version:<br><br><div style=\"clear:both;text-align:center\"><a href=\"https://chrome.google.com/extensions/detail/ddkahgkblobiogkkeedfnjkldecloidi\"><img border=\"0\" src=\"http://lh4.ggpht.com/_dvvucIDCi0c/TA4B3UKouhI/AAAAAAAAAMw/fUfYekRUfFE/s800/download.png\"></a></div><br><br><br><b>Download Links:</b><br><a href=\"https://chrome.google.com/extensions/detail/ddkahgkblobiogkkeedfnjkldecloidi\">FeedSquares in Google Chrome Gallery (screenshots/link to download)</a><br><br>"
+    },
+    "author" : "Rocket-in-Bottle Games",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://blog.rocketinbottle.com/feeds/posts/default",
+      "title" : "Rocket-in-Bottle",
+      "htmlUrl" : "http://blog.rocketinbottle.com/"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1275308660540",
+    "timestampUsec" : "1275308660540941",
+    "id" : "tag:google.com,2005:reader/item/cfbd8c22808ddcc5",
+    "categories" : [ "user/15832330886150628312/state/com.google/read", "user/10487157201604358133/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends", "audio", "discovery", "music", "musical-web", "roundup" ],
+    "title" : "Ten awesome ways to find new music online",
+    "published" : 1275235200,
+    "updated" : 1275235200,
+    "alternate" : [ {
+      "href" : "http://www.pheedcontent.com/click.phdo?i=f10e5bd5e94696b9e0faca949053dc03",
+      "type" : "text/html"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/10487157201604358133/state/com.google/broadcast",
+      "title" : "Avi's shared items"
+    } ],
+    "summary" : {
+      "direction" : "ltr",
+      "content" : "<p>Filed under: <a href=\"http://www.downloadsquad.com/category/audio/\" rel=\"tag\">Audio</a>, <a href=\"http://www.downloadsquad.com/category/features/\" rel=\"tag\">Features</a>, <a href=\"http://www.downloadsquad.com/category/lists/\" rel=\"tag\">Lists</a></p><div style=\"text-align:center\"><a href=\"http://www.uvumi.com/\"><img vspace=\"4\" hspace=\"4\" height=\"301 width=\" border=\"0\" align=\"middle\" alt=\"uvumi\" src=\"http://www.blogcdn.com/www.downloadsquad.com/media/2010/05/uvumi-4840.png\"></a></div>\n<p> </p>\n<div style=\"float:left;margin-right:10px;margin-bottom:2px\"> </div>\nI think the need for music and rhythm is one of the most basic human needs; and as we evolve, so evolve our ways of hunting and gathering this precious commodity.\n<p> </p>\n<p>In this post, I've gathered 10 great places to expand your musical horizons: free, legal ways to discover music online, which work <em>everywhere</em> (not only in the US or in Europe)!</p>\n<p>Not all of the sites below actually let you <em>listen</em> to music - they are not all players; but they can all help you find the next big thing, or just a tune to groove to. <br>\n<br>\nLet's get started!</p>\n<h2>Uvumi</h2>\n<p><a href=\"http://www.downloadsquad.com/2010/03/31/uvumi-builds-a-community-for-musicians-and-fans-interview-to/\">Uvumi</a> is one of my favorite players in this space. You probably won't find much music you already know there; it's a community for budding artists, which lets them put their music online, be discovered and get direct feedback from their listeners.</p>\n<p>I've covered Uvumi in detail, but if I had to sum it up in brief, I'd have to say that what impressed me most about the site is how well-managed it is. Marshall (the guy behind the site) seems to be taking both the listeners and the artists really seriously, and there's a true sense of community once you get into it.</p>\n<h2>YouTube Disco</h2>\n<p>When was the last time you listened to some music on YouTube? Probably sometime today or yesterday, right? It's something most of us do on a routine basis, and there's a whole cottage industry of mashups which use YouTube as a music repository and dish out recommendations.</p>\n<p>And then there's Youtube's own <a href=\"http://www.downloadsquad.com/2010/01/28/youtube-music-discovery-project-and-playlist-creation-tool/\">Music Discovery Project</a>. It's pretty much what you would expect, and it's certainly worth knowing about.</p>\n<p>To see eight other ways to find and listen to music online (and a bonus mention!), keep on reading after the fold.</p><h2>Bandcamp</h2>\n<div style=\"text-align:center\"><a href=\"http://bandcamp.com/\"><img width=\"550\" vspace=\"4\" hspace=\"4\" height=\"368\" border=\"0\" alt=\"Bandcamp\" src=\"http://www.blogcdn.com/www.downloadsquad.com/media/2010/02/bandcamp.png\"></a></div>\n<p><a href=\"http://www.downloadsquad.com/2010/02/03/bandcamp-lets-musicians-be-heard/\">Bandcamp</a> seems to be geared more towards the artists than the listeners, but it's still awesome. It is meant to be used as a \"band homepage\", and lets artists showcase their work and sell (or give away) their music using a very slick, sophisticated interface.</p>\n<p>One recent addition to Bandcamp is the <a href=\"http://bandcamp.com/tags\">tags</a> page, which lets you browse music by genre or physical location (in case you'd like to see the band live).</p>\n<h2>The Hype Machine</h2>\n<p>The blogosphere remains one of the most prodigious sources for music recommendations. After all, people like talking about music. There seems to be an endless amount of music blogs, both large and small, and some also embed single tracks along with their reviews.</p>\n<p><a href=\"http://hypem.com/\">The Hype Machine</a> takes a large chunk of this teeming community and aggregates it into its own interface, letting you see who's talking about what, and most importantly you can listen to audio tracks right on the site.</p>\n<h2>Grooveshark</h2>\n<p><a href=\"http://www.downloadsquad.com/2009/10/27/were-gonna-need-a-bigger-boat-grooveshark-attacks-your-desktop/\">Grooveshark</a> is my go-to service when I just want to find one song and check it out with minimum fuss. When someone mentions a track which sounds interesting, I just fire up Grooveshark, search for it, and hit Play. Of course, that's just one way to use this incredible service.</p>\n<h2>Deezer</h2>\n<p>We've somehow never covered <a href=\"http://www.deezer.com/en/\">Deezer</a> before, which really should be remedied. Deezer is based in France, but the interface is available in English, Italian, German and Spanish as well. It's similar to Grooveshark in that it is a Flash application which lets you quickly find the music you're interested in, and they also have a Radio feature.</p>\n<p>Selection seems to be smaller than Grooveshark, though; in searching for some Ben Folds tracks, all I found was weird karaoke mixes and some MIDI files (!).</p>\n<h2>Musicovery</h2>\n<div align=\"center\"><a href=\"http://www.musicovery.com\"><img width=\"400\" vspace=\"4\" hspace=\"4\" height=\"214\" border=\"0\" align=\"top\" alt=\"Mosicovery\" src=\"http://www.blogcdn.com/www.downloadsquad.com/media/2008/02/mus.jpg\"></a></div>\n<br>\n<p><a href=\"http://www.downloadsquad.com/2008/02/03/musicovery-find-new-songs-based-on-how-you-feel/\">Musicovery</a> presents an interesting tradeoff. The interface is really nice, but the sound quality is horrible (at least for the free service). While they claim paid subscribers get to enjoy \"Hi-Fi\" quality, I was unable to test this. What I <em>could</em> test was an interesting, if somewhat crippled way, to discover music using a canvas of associations, and an intuitive way to specify what you're looking for.</p>\n<p>You dial in a genre, and then specify how upbeat or mellow you want your tunes to be, and Musicovery then dishes out surprisngly accurate results. But if you're serious about using this service, you should really go for the Pro option - their free service is kind of bare-bones.</p>\n<h2>Mufin</h2>\n<p><a href=\"http://www.downloadsquad.com/2008/10/08/mufin-launches-new-music-discovery-engine-beta-download-squad-r/\">Mufin</a> is actually one of the most amazing services on this list; I just discovered it now myself while researching for this feature, and it is simply awesome.</p>\n<p>While the web service seems a tad generic (how unique can you be in this space, after all?), their <a href=\"http://www.downloadsquad.com/2009/02/27/music-recommendation-site-mufin-releases-desktop-player/\">desktop player</a> is <em>amazing</em>. I'm strictly a Foobar2000 guy, for years now, but this player is good enough to make me think of switching.</p>\n<p>It takes your music library and neatly catalogs, and lets you easily find similar tracks and email tracks (or actually, links to those tracks on Mufin's site) to your friends. It's an incredible memory hog (271MB on my system, holy cow!) but it's simple, fast and responsive.</p>\n<p>They also have a Pro version which seems quite interesting. It has a feature which displays your entire music library as an animated cloud of tracks, which you slice and dice on-the-fly to find just the music you want. There's no trial available for the Pro version, but I have contacted Mufin to see if they'd be interested in a review. If they are, we might just do a giveaway, too.<br>\n<br>\n... this is definitely one to wait for!</p>\n<h2>Allmusic</h2>\n<p>It seems like <a href=\"http://allmusic.com/\">Allmusic</a> has been around forever. This is actually one of the first music discovery services I have ever found online, and it's been going strong for years.</p>\n<p>Allmusic features a mind-boggling mass of detailed artist and album reviews, painstakingly cataloged by mood, genre, style, theme, running time, and more. The reviews are long and comprehensive.</p>\n<p>While you won't find full tracks on Allmusic, you can listen to short snippets. It's mainly a great way to discover artists somehow related or similar to artists you already know, so you could then go and hunt down their music via other means (or buy it on Amazon via Allmusic).</p>\n<h2>Muxtape</h2>\n<p>Remember <a href=\"http://www.downloadsquad.com/2008/03/26/simple-mixtape-sharing-with-muxtape/\">Muxtape</a>? Back when the service started, it was about free-for-all playlist sharing. Of course, the big labels would have none of that, and gave the service quite a thrashing.</p>\n<p>Muxtape then went on hiatus, and came back as a service aimed at indie musicians and smaller bands who wish to share their music with the world. It's kind of like Bandcamp with an added dose of hipster-juice. Muxtape's player remains one of the most innovative and simple online players I've ever seen.</p>\n<h2>Bonus: ExtensionFM</h2>\n<p>Now that you've found all of this music online, you may want a nice way to catalog it. <a href=\"http://www.downloadsquad.com/2010/03/19/extensionfm-is-the-first-killer-extension-for-google-chrome-os/\">ExtensionFM</a> may just be that way. While it won't work with all of the services above, it's a great match for The Hype Machine, and might also work with Bandcamp (tell me in the comments if it does). I recommend you read Lee's <a href=\"http://www.downloadsquad.com/2010/03/19/extensionfm-is-the-first-killer-extension-for-google-chrome-os/\">detailed review</a>, but in a nutshell I can tell you it's a Chrome add-on which automatically collects and catalogs all of the music you find online, and does it very nicely.</p>\n<p>p.s - in case you're wondering why I never mentioned Last.fm, it's because just about everybody knows about it, and because it's just not that good anymore now that it's so restricted (in my opinion).<br>\n<br>\nGot another site or tool you use to discover awesome, new music online? Let's hear about it in the comments!</p>\n<div style=\"width:100%;height:15px;display:block;margin-top:3px\"><span style=\"float:right;height:15px\"></span><span style=\"float:right\"> </span><span style=\"float:right;margin-right:7px\"><a title=\"Post on Google Buzz\" href=\"http://www.google.com/buzz/post\"> Share </a></span> <span style=\"float:right;margin-right:2px\"><a href=\"http://reddit.com/submit\"> <img border=\"0\" alt=\"submit to reddit\" style=\"border:0px none\" src=\"http://reddit.com/static/spreddit7.gif\"> </a></span><span style=\"float:right\"><a href=\"http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.downloadsquad.com%2F2010%2F05%2F30%2Fdiscover-find-new-music%26title%3DTen+awesome+ways+to+find+new+music+online\"><img alt=\"StumbleUpon.com\" style=\"border:0px none\" src=\"http://cdn.stumble-upon.com/images/badgeStumble.png\"></a></span></div><p style=\"padding:5px;background:#ddd;border:1px solid #ccc;clear:both\"><a href=\"http://www.downloadsquad.com/2010/05/30/discover-find-new-music/\">Ten awesome ways to find new music online</a> originally appeared on <a href=\"http://www.downloadsquad.com\">Download Squad</a> on Sun, 30 May 2010 11:00:00 EST.  Please see our <a href=\"http://www.weblogsinc.com/feed-terms/\">terms for use of feeds</a>.</p><h6 style=\"clear:both;padding:8px 0 0 0;height:2px;font-size:1px;border:0;margin:0;padding:0\"></h6><a href=\"http://www.uvumi.com/\">Read</a> | <a href=\"http://www.downloadsquad.com/2010/05/30/discover-find-new-music/\" rel=\"bookmark\" title=\"Permanent link to this entry\">Permalink</a> | <a href=\"http://www.downloadsquad.com/forward/19496889/\" title=\"Send this entry to a friend via email\">Email this</a> | <a href=\"http://www.downloadsquad.com/2010/05/30/discover-find-new-music/#comments\" title=\"View reader comments on this entry\">Comments</a><br style=\"clear:both\">\n<br style=\"clear:both\">\n  <a style=\"font-size:10px;color:maroon\" href=\"http://www.pheedcontent.com/hostedMorselClick.php?hfmm=v3:b9c56224ca43d2d08b072a58d8a2cca3:XbOncdkq4PeV3IjqHmAWQpmMKFVLyVr66mBz8eiWXjnoGWO1SLxL2v5EtVKurt2ZZZw3S00fL6Bs\"><img border=\"0\" title=\"Add to digg\" alt=\"Add to digg\" src=\"http://images.pheedo.com/images/mm/digg.gif\"></a>\n  <a style=\"font-size:10px;color:maroon\" href=\"http://www.pheedcontent.com/hostedMorselClick.php?hfmm=v3:6097eb323d8717e79c2f935a4277c8d2:8GLl52BmJ8jEiKKOKWfza1nA7UH%2Fw2vfHs8HL8sNW3Q9d0ugwF%2BcKLWJK5ZwDHHZyj9ZkoqKsT9g\"><img border=\"0\" title=\"Add to del.icio.us\" alt=\"Add to del.icio.us\" src=\"http://images.pheedo.com/images/mm/delicious.gif\"></a>\n  <a style=\"font-size:10px;color:maroon\" href=\"http://www.pheedcontent.com/hostedMorselClick.php?hfmm=v3:088d9c933cc08d2be6c3c1d7d3c6fc00:VR8UMiqbu1EOTF0QWAqhyMQ9NhpgDeYRuDpfB2OBoMwIxJlMFEQUIGqahuVTT0F31A%2B%2BOBe2IBqo\"><img border=\"0\" title=\"Add to Google\" alt=\"Add to Google\" src=\"http://images.pheedo.com/images/mm/google.png\"></a>\n  <a style=\"font-size:10px;color:maroon\" href=\"http://www.pheedcontent.com/hostedMorselClick.php?hfmm=v3:3a6e643ddddbf03a525d74cc2063fd23:TOJssVRcfoTp866jX8oE2SoD8wLCc6%2Br3fltGF29lpQfe5VmN9odSWlFzNvmIhg1fUYugmEC42E88Q%3D%3D\"><img border=\"0\" title=\"Add to StumbleUpon\" alt=\"Add to StumbleUpon\" src=\"http://images.pheedo.com/images/mm/stumbleit.gif\"></a>\n  <a style=\"font-size:10px;color:maroon\" href=\"http://www.pheedcontent.com/hostedMorselClick.php?hfmm=v3:aa84ef8bcf1f56bf7a822f1ec9526601:GYI5HMYNIilE3KgVo4AQ5%2Ba58BIOeIDz%2FSm49mnep9KH0aYlSYV3fxWmbqDHdl8kjXGEvGLSo%2BiTiA%3D%3D\"><img border=\"0\" title=\"Add to Facebook\" alt=\"Add to Facebook\" src=\"http://images.pheedo.com/images/mm/facebook.gif\"></a>\n  <a style=\"font-size:10px;color:maroon\" href=\"http://www.pheedcontent.com/hostedMorselClick.php?hfmm=v3:602bc684faf69bacc19e45875f60ca9a:fjFL%2FiBLVyxQmtD9cscv7EmuQQCzMaqDKaBkExAHnjIcQycckyKoVlMYyV4A8R0Q66P%2FaIkTui1U\"><img border=\"0\" title=\"Add to Reddit\" alt=\"Add to Reddit\" src=\"http://images.pheedo.com/images/mm/reddit.png\"></a>\n  <a style=\"font-size:10px;color:maroon\" href=\"http://www.pheedcontent.com/hostedMorselClick.php?hfmm=v3:af65cd2e373b903ff94adc62ba10366c:XLfyO%2BzOzh%2Fhqk0EEM2Kd%2BvVsv2thmO2gzZW%2FyZb44pBM77jRYy3FOYsrH0PV3SF%2BJxPPAmUwdwEnA%3D%3D\"><img border=\"0\" title=\"Add to Technorati\" alt=\"Add to Technorati\" src=\"http://images.pheedo.com/images/mm/technorati.png\"></a>\n<br style=\"clear:both\">\n<a href=\"http://ads.pheedo.com/click.phdo?s=f10e5bd5e94696b9e0faca949053dc03&amp;p=1\"><img alt=\"\" style=\"border:0\" border=\"0\" src=\"http://ads.pheedo.com/img.phdo?s=f10e5bd5e94696b9e0faca949053dc03&amp;p=1\"></a>\n<img alt=\"\" height=\"0\" width=\"0\" border=\"0\" src=\"http://a.triggit.com/px?u=pheedo&amp;rtv=TechBiz&amp;rtv=p29850&amp;rtv=f18557\"><img alt=\"\" height=\"0\" width=\"0\" border=\"0\" src=\"http://pixel.quantserve.com/pixel/p-8bUhLiluj0fAw.gif?labels=pub.29850.rss.TechBiz.18557,cat.TechBiz.rss\"><br>\n<img src=\"http://ads.pheedo.com/img.phdo?kw=\"> \n<a href=\"http://ads.pheedo.com/click.phdo?s=f10e5bd5e94696b9e0faca949053dc03&amp;p=64&amp;kw=Youtube\">Youtube</a> - <a href=\"http://ads.pheedo.com/click.phdo?s=f10e5bd5e94696b9e0faca949053dc03&amp;p=64&amp;kw=Hype+Machine\">Hype Machine</a> - <a href=\"http://ads.pheedo.com/click.phdo?s=f10e5bd5e94696b9e0faca949053dc03&amp;p=64&amp;kw=mufin\">mufin</a> - <a href=\"http://ads.pheedo.com/click.phdo?s=f10e5bd5e94696b9e0faca949053dc03&amp;p=64&amp;kw=Grooveshark\">Grooveshark</a> - <a href=\"http://ads.pheedo.com/click.phdo?s=f10e5bd5e94696b9e0faca949053dc03&amp;p=64&amp;kw=Music\">Music</a>"
+    },
+    "author" : "Erez Zukerman",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "feed/http://feeds.pheedo.com/downloadsquad",
+      "title" : "Download Squad",
+      "htmlUrl" : "http://downloadsquad.switched.com"
+    }
+  }, {
+    "isReadStateLocked" : true,
+    "crawlTimeMsec" : "1262426087642",
+    "timestampUsec" : "1262426087642192",
+    "id" : "tag:google.com,2005:reader/item/6c26d32ad985b060",
+    "categories" : [ "user/15832330886150628312/state/com.google/read", "user/10487157201604358133/state/com.google/broadcast", "user/15832330886150628312/state/com.google/broadcast-friends" ],
+    "title" : "TechFolder",
+    "published" : 1262426087,
+    "updated" : 1262426087,
+    "alternate" : [ {
+      "href" : "http://www.google.com/reader/bundle/user%2F10487157201604358133%2Fbundle%2FTechFolder",
+      "type" : "text/html"
+    } ],
+    "related" : [ {
+      "href" : "http://www.google.com/reader/shared/10487157201604358133",
+      "title" : "Avi's shared items in Google Reader",
+      "streamId" : "user/10487157201604358133/state/com.google/broadcast"
+    } ],
+    "via" : [ {
+      "href" : "http://www.google.com/reader/public/atom/user/10487157201604358133/state/com.google/broadcast",
+      "title" : "Avi's shared items"
+    } ],
+    "content" : {
+      "direction" : "ltr",
+      "content" : "<h2>TechFolder</h2>\n\n<ul><li>Latest Adobe News</li> <li>contentSutra</li> <li>TechCrunch</li> <li>The Tech Folder » top</li> <li>Abduzeedo | Graphic Design Inspiration and Photoshop Tutorials</li> <li>The Official Google Blog</li> <li>Official Google Reader Blog</li> <li>Digit - Tech News</li> <li>Web.AppStorm</li> <li>Digital Inspiration - Technology Blog</li> <li>Download Squad</li> <li>Mashable!</li> <li>The River Current</li> <li>Beedigital</li> <li>PixelPerfect (Large Xvid)</li> <li>Smashing Magazine</li> <li>Tech2.com India</li></ul>\n<a href=\"http://www.google.com/reader/bundle/user%2F10487157201604358133%2Fbundle%2FTechFolder\">Preview this bundle</a>"
+    },
+    "author" : "Avi",
+    "comments" : [ ],
+    "annotations" : [ ],
+    "origin" : {
+      "streamId" : "user/10487157201604358133/source/com.google/bundle-item",
+      "title" : "Avi&#39;s shared items in Google Reader",
+      "htmlUrl" : "http://www.google.com/reader/shared/10487157201604358133"
+    }
+  } ]
+}
