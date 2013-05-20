@@ -7,22 +7,33 @@ app = Flask(__name__)
 @app.route('/')
 def index_page():
     import opml
-    outline = opml.parse("/home/arjuna/feedr/Reader/subscriptions.xml")
-    #outline = opml.parse("http://www.balsamiq.com/files/BalsamiqFireHose.opml")
+    #outline = opml.parse("/home/arjuna/feedr/Reader/subscriptions.xml")
+    outline = opml.parse("/home/cs/Projects/hqfeed/subscriptions.xml")
     return render_template('layout.html', outline=outline)
 
 
 @app.route('/show_feed_entries/', methods=['POST'])
 def feed_entries():
     import feedparser
-    feed = None
+    entries = None
     feed_name = None
+    url = None
     if request.method == "POST":
+
+        from pymongo import MongoClient
+        client = MongoClient()
+        client = MongoClient('localhost', 27017)
+        
+        db = client.feeds
+        collection = db.feeds_dump
         url = request.form['url']
+
         feed_name = request.form['feed_name']
         if url:
-            feed = feedparser.parse(url)
-    return render_template('feed_info.html', feed=feed, feed_name=feed_name)
+            cur = collection.find({"xmlUrl":url})
+            entries = cur.next()['feed_info']
+
+        return render_template('feed_info.html', entries=entries, feed_name=feed_name, url=url)
 
 @app.route('/login')
 def login():
