@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
 <head>
   <title>Feedr</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
@@ -78,19 +79,19 @@
         <div class="span4 well">
           <div class="row-fluid">
             <div class="span12">
-            <form method="post" action="">
+            <form id="loginPage" method="get" action="login">
               <fieldset>
                 <legend>Please login</legend>
                 <div class="control-group">
                   <label class="control-label">User name</label>
                   <div class="controls">
-                    <input class="my-input" id="textinput" name="textinput" class="input-xlarge" required type="text">
+                    <input class="my-input" id="textinput" name="textinput" class="input-xlarge" type="text">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Password</label>
                     <div class="controls">
-                      <input class="my-input" id="passwordinput" name="passwordinput" class="input-xlarge" required type="password">
+                      <input class="my-input" id="passwordinput" name="passwordinput" class="input-xlarge" type="password">
                       </div>
                     </div>
                     <div class="control-group">
@@ -103,10 +104,32 @@
                       </div>
                     </div>
                   </fieldset>
+
+                  <fieldset>
+                    <div class="control-group">
+                      <div class="controls">
+                        <p>
+                          <button class="btn btn-large btn-primary btn-login" type="submit" value="google">Google</button>
+                          <button class="btn btn-large btn-primary btn-login" type="submit" value="twitter">Twitter</button>
+                        </p>
+                      </div>
+                    </div>
+                  </fieldset>
+                  
                 </form>
               </div>
             </div>
           </div>
         </div>
+        <script>
+          $(document).ready(function() {
+              $('.btn-login').click(function(e) {
+                  console.log(e);
+                  var input = $("<input>").attr("type", "hidden").attr("name", "logintype").val(e.currentTarget.value);
+                  $('#loginPage').append($(input));
+                  $('#loginPage').submit();
+                  });
+          });
+        </script>
       </body>
     </html>

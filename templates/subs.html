@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Subscriptions</title>    
+  </head>
+  <body>
+    <div class=page>
+      <h1>My Subscriptions</h1>
+      <div class=metanav>
+        <ul class=entries>
+          {% if subs %}
+          {% for mysub in subs %}
+          <li><h2>{{ mysub }}</h2></li>
+          {% endfor %}
+          {% else %}
+          <li><h2>No Data ra..</h2></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

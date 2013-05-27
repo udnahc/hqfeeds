@@ -5,7 +5,7 @@ import pymongo
 import opml
 from feed_models import *
 
-outline = opml.parse("/home/cs/Projects/hqfeed/subscriptions.xml")
+outline = opml.parse("/home/arjuna/feedr/Reader/subscriptions.xml")
 
 from pymongo import MongoClient
 client = MongoClient()
@@ -39,6 +39,7 @@ session.commit()
 
 import feedparser
 #urls = ["http://tambrahmrage.tumblr.com/rss"]
+
 for url in urls:
     feed_entry = {}
     feed = feedparser.parse(url)
@@ -57,6 +58,6 @@ for url in urls:
         feed_entries.append(feed_info) 
 
     feed_entry['feed_info'] = feed_entries
+    print feed_entry,'\n'
     collection.insert(feed_entry, upsert=True,safe=True)
-
-import pdb; pdb.set_trace()
+print "done"
