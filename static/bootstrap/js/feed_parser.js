@@ -11,3 +11,30 @@ function show_feed(url_label,url) {
 	    }
 	});
 }
+
+function mark_read(url,class_name) {
+    $("#"+class_name).css({'background-color':"#DFEFF2"})
+}
+
+function like_link(url, feed_name) {
+    $.ajax({
+	    type:"POST",
+		url: "/like/",
+		data: {"url":url, "feed_name":feed_name},
+		success: function(return_value) {
+		$("#right-nav").html(return_value);
+	    }
+	});
+}
+
+function read_later() {
+    alert('Read this link later');
+}
+
+function share() {
+    alert('Share this link');
+}
+
+function edit_tags() {
+    alert('Edit tags for this link');
+}
