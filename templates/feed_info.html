@@ -1,28 +1,28 @@
-<div class="span10" style="margin-bottom:10px;">
-  <h4> Latest feeds from {{ feed_name }} ( {{ entries|length }} )</h4>
+<div id="feed_title" class="span10" style="margin-bottom:10px;">
+  <h4> You are reading articles from {{ feed_name }} ( {{ entries_count }} )</h4>
 </div>
-{% for entry in entries %}
-<div id="mini-layout" style="margin-top: 5px;margin-bottom: 15px;margin-right: 10px;padding-left:50px; border-bottom: 1px solid #E5E5E5;">
-    <div class="row">
-      <div id="blog_entry" class="pad10-top">
-	<div class="row">
-	  <div class="span9">
-        <i id="#read_icon_{{loop_index}}" class="icon-star-empty"></i>
-	    <a href="#" onClick="$('#description_{{loop.index}}').toggle();">{{ entry.title }}
-	    </a>
-	  </div>
-	  <div class="span2">
-	    {{ entry.published }}
-	  </div>
-	</div>
-      </div>
-      <div id="description_{{loop.index}}" class="description-hidden">
-	    <div id="blog-link"><a href="{{entry.link}}" target="_blank"><h3>{{entry.title}}</h3></a></div>
-	    <div id="description" style="padding-bottom:15px;">{{ entry.description|safe }}</div>
-        <div id="share-this">
-          {%include 'share.html'%}
+<div id="feed_entries">
+  {% for entry in entries %}
+  <div id="blog_entry_{{loop.index}}" style="border-bottom:1px #1111ED">
+    <div id="blog_entry_header_{{loop.index}}">
+        <div class="span9">
+          <a href="#" onClick="alert('Star this');"><i id="#read_icon_{{loop.index}}" class="icon-star-empty"></i></a>
+	      <a href="#" onClick="$('#blog_entry_description_{{loop.index}}').toggle();mark_read('{{entry.link}}','blog_entry_header_{{loop.index}}');">{{ entry.title }}
+	      </a>
         </div>
+        <div class="span2">
+          {{ entry.parsed_time.strftime('%Y-%m-%d %H-%m') }}
+        </div>
+    </div>
+    <div id="blog_entry_description_{{loop.index}}" class="description-hidden">
+      <div class="span12">
+      <div id="blog-link"><a href="{{entry.link}}" target="_blank"><h3>{{entry.title}}</h3></a></div>
+      <div id="description" style="padding-bottom:15px;">{{ entry.description|safe }}</div>
+      <div id="blog_entry_footer_{{loop.index}}">
+        {%include 'share.html'%}
+      </div>
       </div>
     </div>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}

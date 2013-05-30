@@ -76,8 +76,22 @@ class Feeds(Base):
     def __repr__(self):
         return '<Feeds({0})>'.format(self.mongo_feed_id)
 
+
 class Anonymous(AnonymousUser):
     __tablename__ = "Anonymous"
+
+class FeedsUpdate(Base):
+    __tablename__ = 'feeds_update'
+
+    feed_url = Column(String, nullable=False)
+    last_updated_title = Column(String)
+    last_updated_date = Column(String)
+
+    def __repr__(self):
+        return '<FeedsUpdate({0})>'.format(self.feed_url)
+    
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 engine = create_engine('sqlite:///hqfeed.db', echo=True)
 
@@ -85,7 +99,8 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-t = FeedUser(email='arjun@hqfeed.com',name='Arjun Suresh', password="something",oauth_id='asd')
+#t = FeedUser(email='chandu@hqfeed.com',name='Chandrashekar Jayaraman', password="something")
+t = session.query(FeedUser)[0]
 #f = Feeds(FeedUser=f,name='Mathematics')
 
 #conn = engine.connect()
