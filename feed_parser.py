@@ -8,8 +8,8 @@ import requests
 import os
 import opml
 import pymongo
-from feed_models import Anonymous, FeedUser
-
+from feed_models import Base, Anonymous, FeedUser, Feeds, Tag
+import feed_models as fm 
 
 app = Flask(__name__)
 
@@ -89,7 +89,7 @@ def google_callback(resp):
         r = requests.get('https://www.googleapis.com/oauth2/v1/userinfo',
                          headers={'Authorization': 'OAuth ' + access_token})
 
-        subscriptions = requests.get('http://www.google.com/reader/api/0/subscription/list',
+        subscriptions = requests.get('http://www.google.com/reader/api/0/subscription/list?output=json',
                                      headers={'Authorization': 'OAuth ' + access_token})
 
         import pprint;pprint.pprint(subscriptions)
@@ -101,15 +101,55 @@ def google_callback(resp):
             login_user(user)
             if subscriptions.ok:
                 # outline = opml.parse(subscriptions.text)
-                from lxml import etree
-                root = etree.XML(subscriptions.text)
-                subs = [asd.text for asd in root.xpath('//string["title"]')]
-                next_url = session.get('next') or url_for('index', subs=subs)
+                urls = create_entries(subscriptions.json['subscriptions'],user)
+                next_url = session.get('next') or url_for('index', subs=urls)
             else:
                 next_url = session.get('next') or url_for('index')
             return redirect(next_url)
     return redirect(url_for('login')) 
 
+
+def create_entries(outline=None,user=''):
+    urls = []
+    for entry in outline:
+        if 'htmlUrl' in entry:
+            f = Feeds(FeedUser=user)
+            f.is_read = False
+            f.is_starred = False
+            # f.feed_label = entry['categories'][0]['label']
+            f.tags.append(Tag(entry['categories'][0]['label']))            
+            f.mongo_feed_id = entry['htmlUrl'] or 'asd'
+            fm.session.add(f)
+            urls.append(f.mongo_feed_id)
+
+    fm.session.commit()
+
+    all_feeds = fm.session.query(Feeds).all()
+    for feed in all_feeds:
+        urls.append(feed.mongo_feed_id)
+
+    # import feedparser
+    # for url in urls[:10]:
+    #     feed_entry = {}
+    #     feed = feedparser.parse(url)
+    #     feed_entry['htmlUrl'] = url
+    #     feed_entries = []
+    #     if  feed.get('entries'):
+    #         import ipdb; ipdb.set_trace()        
+
+    #     for entry in feed['entries']:
+    #         feed_entry['title'] = entry.title
+    #         if hasattr(entry, 'description'):
+    #             feed_entry['description'] = entry.description
+    #         if hasattr(entry, 'content'):
+    #             feed_entry['content'] = entry.content
+    #         if hasattr(entry, 'published'):
+    #             feed_entry['published_entry'] = entry.published
+    #         feed_entry['link'] = entry.link
+    #         feed_entry['parsed_time'] = datetime.now()
+    #         collection.insert(feed_entry, manipulate=False, safe=True)
+    return urls
+    
 @app.route(app.config['TWITTER_REDIRECT_URI'])
 @twitter.authorized_handler
 def twitter_callback(resp):
