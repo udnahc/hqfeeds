@@ -1,10 +1,10 @@
 {%block left_nav%}
 <div class="accordion" id="accordion2">
-{%for entry in outline%}
+{%for entry in tagsObj %}
   <div class="accordion-group">
-    {%if entry._outlines%}
+    {%if entry %}
     <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{loop.index}}">{{ entry.text|truncate(length=20) }}&nbsp;&nbsp;&nbsp<i class="icon-plus"></i>
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{loop.index}}">{{ entry.tag|truncate(length=20) }}&nbsp;&nbsp;&nbsp<i class="icon-plus"></i>
       </a>
     </div>
     {%if loop.index == 1 %}
@@ -13,16 +13,16 @@
     <div id="collapse{{loop.index}}" class="accordion-body collapse">
     {%endif%}
       <div class="accordion-inner">
-         {%for ent in entry._outlines%}
+         {%for ent in entry.feeds %}
 	 <div id="blog-entries" style="margin-bottom:5px;">
-               <a href="#" onClick="show_feed('{{ent.text|e}}','{{ent.xmlUrl}}')">{{ ent.text|truncate(length=20)}}</a>
+               <a href="#" onClick="show_feed('{{ent|e}}','{{ent}}')">{{ ent|truncate(length=20)}}</a>
 	 </div>
          {%endfor%}
       </div>
     </div>
     {%else%}
     <div class="accordion-heading">
-      <a class="accordion-toggle"  href="#" onClick="show_feed('{{entry.text|e}}','{{entry.xmlUrl}}')">{{ entry.text|truncate(length=20) }}
+      <a class="accordion-toggle"  href="#" onClick="show_feed('{{ent|e}}','{{ent}}')">{{ ent|truncate(length=20) }}
       </a>
     </div>    
     {%endif%}

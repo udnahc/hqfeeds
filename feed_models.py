@@ -33,6 +33,8 @@ class FeedUser(Base,UserMixin):
     oauth_id = Column(String)
     active = Column('active', Boolean(), default=True)
 
+    feeds = relationship("Feeds", backref="feeduser")
+
     def __init__(self, oauth_id, name, password, email):
         self.oauth_id = oauth_id
         self.name = name
@@ -90,7 +92,7 @@ class Feeds(Base):
     is_starred = Column(Boolean, nullable = True)
 
     # many to many Feeds<->Tag
-    tags = relationship('Tag', secondary=feeds_tags, backref='tags')
+    tags = relationship('Tag', secondary=feeds_tags, backref='feeds')
     def __repr__(self):
         return '<Feeds({0})>'.format(self.mongo_feed_id)
 

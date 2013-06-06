@@ -57,8 +57,23 @@ def load_user(user_id):
 @app.route('/')
 def index():
     # return current_user.name,subs #
-    subs = request.args.getlist('subs') or None
-    return render_template('subs.html',subs=subs)
+    # import ipdb; ipdb.set_trace()
+    tagsObj = [
+        {
+            'feeds': [u'http://simplebits.com', u'http://www.456bereastreet.com/', u'http://www.cssbeauty.com/', u'http://alistapart.com', u'http://www.smashingmagazine.com/', u'http://www.zeldman.com', u'http://www.digital-web.com/'],
+            'tag': u'Web Design'
+        },
+        {
+            'feeds': [u'http://xkcd.com/', u'http://spikedmath.com/', u'http://abstrusegoose.com'],
+            'tag': u'fun'
+        },
+        {
+            'feeds': [u'http://googledevelopers.blogspot.com/', u'http://googleresearch.blogspot.com/', u'http://hacknmod.com', u'http://www.mattcutts.com/blog', u'http://readwrite.com'],
+            'tag': u'asd'
+        }
+    ]
+        # tagsObj = request.args.getlist('tagsObj') or None
+    return render_template('layout.html',tagsObj=tagsObj)
 
 @app.route('/login_google')
 def login_google():
@@ -101,8 +116,16 @@ def google_callback(resp):
             login_user(user)
             if subscriptions.ok:
                 # outline = opml.parse(subscriptions.text)
-                urls = create_entries(subscriptions.json['subscriptions'],user)
-                next_url = session.get('next') or url_for('index', subs=urls)
+                tagsObj = create_entries(subscriptions.json['subscriptions'],user)
+                finalTags = []
+                for eachTagObj in tagsObj:
+                    myDict = {}
+                    myDict['tag'] = eachTagObj.tag
+                    myDict['feeds'] = []
+                    for eachfeed in eachTagObj.feeds:
+                        myDict['feeds'].append(eachfeed.mongo_feed_id)
+                    finalTags.append(myDict)
+                next_url = session.get('next') or url_for('index', tagsObj=finalTags)
             else:
                 next_url = session.get('next') or url_for('index')
             return redirect(next_url)
@@ -130,31 +153,9 @@ def create_entries(outline=None,user=''):
 
     fm.session.commit()
 
-    all_feeds = fm.session.query(Feeds).all()
-    for feed in all_feeds:
-        urls.append(feed.mongo_feed_id)
-
-    # import feedparser
-    # for url in urls[:10]:
-    #     feed_entry = {}
-    #     feed = feedparser.parse(url)
-    #     feed_entry['htmlUrl'] = url
-    #     feed_entries = []
-    #     if  feed.get('entries'):
-    #         import ipdb; ipdb.set_trace()        
-
-    #     for entry in feed['entries']:
-    #         feed_entry['title'] = entry.title
-    #         if hasattr(entry, 'description'):
-    #             feed_entry['description'] = entry.description
-    #         if hasattr(entry, 'content'):
-    #             feed_entry['content'] = entry.content
-    #         if hasattr(entry, 'published'):
-    #             feed_entry['published_entry'] = entry.published
-    #         feed_entry['link'] = entry.link
-    #         feed_entry['parsed_time'] = datetime.now()
-    #         collection.insert(feed_entry, manipulate=False, safe=True)
-    return urls
+    all_feeds = fm.session.query(FeedUser,Feeds).filter(FeedUser.id == user.id).filter(FeedUser.id == Feeds.feed_user_id).all()
+    uniqueTags = list(set([asd[1].tags[0] for asd in all_feeds]))
+    return uniqueTags
     
 @app.route(app.config['TWITTER_REDIRECT_URI'])
 @twitter.authorized_handler
