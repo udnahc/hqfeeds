@@ -8,8 +8,8 @@ import requests
 import os
 import opml
 import pymongo
-from feed_models import Anonymous, FeedUser
-
+from feed_models import Base, Anonymous, FeedUser, Feeds, Tag
+import feed_models as fm 
 
 app = Flask(__name__)
 
@@ -57,8 +57,23 @@ def load_user(user_id):
 @app.route('/')
 def index():
     # return current_user.name,subs #
-    subs = request.args.getlist('subs') or None
-    return render_template('subs.html',subs=subs)
+    # import ipdb; ipdb.set_trace()
+    tagsObj = [
+        {
+            'feeds': [u'http://simplebits.com', u'http://www.456bereastreet.com/', u'http://www.cssbeauty.com/', u'http://alistapart.com', u'http://www.smashingmagazine.com/', u'http://www.zeldman.com', u'http://www.digital-web.com/'],
+            'tag': u'Web Design'
+        },
+        {
+            'feeds': [u'http://xkcd.com/', u'http://spikedmath.com/', u'http://abstrusegoose.com'],
+            'tag': u'fun'
+        },
+        {
+            'feeds': [u'http://googledevelopers.blogspot.com/', u'http://googleresearch.blogspot.com/', u'http://hacknmod.com', u'http://www.mattcutts.com/blog', u'http://readwrite.com'],
+            'tag': u'asd'
+        }
+    ]
+        # tagsObj = request.args.getlist('tagsObj') or None
+    return render_template('layout.html',tagsObj=tagsObj)
 
 @app.route('/login_google')
 def login_google():
@@ -89,7 +104,7 @@ def google_callback(resp):
         r = requests.get('https://www.googleapis.com/oauth2/v1/userinfo',
                          headers={'Authorization': 'OAuth ' + access_token})
 
-        subscriptions = requests.get('http://www.google.com/reader/api/0/subscription/list',
+        subscriptions = requests.get('http://www.google.com/reader/api/0/subscription/list?output=json',
                                      headers={'Authorization': 'OAuth ' + access_token})
 
         import pprint;pprint.pprint(subscriptions)
@@ -101,15 +116,47 @@ def google_callback(resp):
             login_user(user)
             if subscriptions.ok:
                 # outline = opml.parse(subscriptions.text)
-                from lxml import etree
-                root = etree.XML(subscriptions.text)
-                subs = [asd.text for asd in root.xpath('//string["title"]')]
-                next_url = session.get('next') or url_for('index', subs=subs)
+                tagsObj = create_entries(subscriptions.json['subscriptions'],user)
+                finalTags = []
+                for eachTagObj in tagsObj:
+                    myDict = {}
+                    myDict['tag'] = eachTagObj.tag
+                    myDict['feeds'] = []
+                    for eachfeed in eachTagObj.feeds:
+                        myDict['feeds'].append(eachfeed.mongo_feed_id)
+                    finalTags.append(myDict)
+                next_url = session.get('next') or url_for('index', tagsObj=finalTags)
             else:
                 next_url = session.get('next') or url_for('index')
             return redirect(next_url)
     return redirect(url_for('login')) 
 
+
+def create_entries(outline=None,user=''):
+    urls = []
+    tags = [entry['categories'][0]['label'] for entry in outline]
+    tags = list(set(tags))
+    tagObjs = [Tag(tag) for tag in tags]
+    fm.session.add_all(tagObjs)
+    fm.session.commit()
+    tagsMapping = [{tagObj.id:[tagObj.tag,tagObj]} for tagObj in tagObjs]
+
+    for entry in outline:
+        if 'htmlUrl' in entry:
+            f = Feeds(FeedUser=user)
+            f.is_read = False
+            f.is_starred = False
+            f.tags = [tagsMap.values()[0][1] for tagsMap in tagsMapping if tagsMap.values()[0][0] == entry['categories'][0]['label']]
+            f.mongo_feed_id = entry['htmlUrl'] or 'asd'
+            fm.session.add(f)
+            urls.append(f.mongo_feed_id)
+
+    fm.session.commit()
+
+    all_feeds = fm.session.query(FeedUser,Feeds).filter(FeedUser.id == user.id).filter(FeedUser.id == Feeds.feed_user_id).all()
+    uniqueTags = list(set([asd[1].tags[0] for asd in all_feeds]))
+    return uniqueTags
+    
 @app.route(app.config['TWITTER_REDIRECT_URI'])
 @twitter.authorized_handler
 def twitter_callback(resp):

@@ -39,7 +39,7 @@ def create_entries():
 
     session.commit()
 
-# create_entries()
+create_entries()
 all_feeds = session.query(Feeds).all()
 for feed in all_feeds:
     urls.append(feed.mongo_feed_id)
