@@ -87,6 +87,7 @@ class Feeds(Base):
     feed_user_id = Column(Integer, ForeignKey('feed_user.id', ondelete="CASCADE"), nullable=False, index=True)
     FeedUser = relationship("FeedUser", backref=backref('feedusers', order_by='Feeds.id'))
     mongo_feed_id = Column(String, nullable = False)
+    feed_title = Column(String)    
     feed_label = Column(String)
     is_read = Column(Boolean, nullable =True)
     is_starred = Column(Boolean, nullable = True)

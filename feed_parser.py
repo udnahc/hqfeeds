@@ -53,27 +53,12 @@ login_manager.anonymous_user = Anonymous
 def load_user(user_id):
     return FeedUser.load(user_id)
     
-
+@login_required
 @app.route('/')
 def index():
-    # return current_user.name,subs #
-    # import ipdb; ipdb.set_trace()
-    tagsObj = [
-        {
-            'feeds': [u'http://simplebits.com', u'http://www.456bereastreet.com/', u'http://www.cssbeauty.com/', u'http://alistapart.com', u'http://www.smashingmagazine.com/', u'http://www.zeldman.com', u'http://www.digital-web.com/'],
-            'tag': u'Web Design'
-        },
-        {
-            'feeds': [u'http://xkcd.com/', u'http://spikedmath.com/', u'http://abstrusegoose.com'],
-            'tag': u'fun'
-        },
-        {
-            'feeds': [u'http://googledevelopers.blogspot.com/', u'http://googleresearch.blogspot.com/', u'http://hacknmod.com', u'http://www.mattcutts.com/blog', u'http://readwrite.com'],
-            'tag': u'asd'
-        }
-    ]
-        # tagsObj = request.args.getlist('tagsObj') or None
-    return render_template('layout.html',tagsObj=tagsObj)
+    all_feeds = fm.session.query(FeedUser,Feeds).filter(FeedUser.id == current_user.id).filter(FeedUser.id == Feeds.feed_user_id).all()
+    uniqueTags = list(set([each_feed[1].tags[0] for each_feed in all_feeds]))
+    return render_template('layout.html',uniqueTags=uniqueTags)
 
 @app.route('/login_google')
 def login_google():
@@ -107,30 +92,18 @@ def google_callback(resp):
         subscriptions = requests.get('http://www.google.com/reader/api/0/subscription/list?output=json',
                                      headers={'Authorization': 'OAuth ' + access_token})
 
-        import pprint;pprint.pprint(subscriptions)
-
         if r.ok:
             data = loads(r.text)
             oauth_id = data['id']
             user = FeedUser.load(oauth_id) or FeedUser.add(**data)
             login_user(user)
             if subscriptions.ok:
-                # outline = opml.parse(subscriptions.text)
-                tagsObj = create_entries(subscriptions.json['subscriptions'],user)
-                finalTags = []
-                for eachTagObj in tagsObj:
-                    myDict = {}
-                    myDict['tag'] = eachTagObj.tag
-                    myDict['feeds'] = []
-                    for eachfeed in eachTagObj.feeds:
-                        myDict['feeds'].append(eachfeed.mongo_feed_id)
-                    finalTags.append(myDict)
-                next_url = session.get('next') or url_for('index', tagsObj=finalTags)
+                user = create_entries(subscriptions.json['subscriptions'],user)
+                next_url = session.get('next') or url_for('index')
             else:
                 next_url = session.get('next') or url_for('index')
             return redirect(next_url)
     return redirect(url_for('login')) 
-
 
 def create_entries(outline=None,user=''):
     urls = []
@@ -148,14 +121,12 @@ def create_entries(outline=None,user=''):
             f.is_starred = False
             f.tags = [tagsMap.values()[0][1] for tagsMap in tagsMapping if tagsMap.values()[0][0] == entry['categories'][0]['label']]
             f.mongo_feed_id = entry['htmlUrl'] or 'asd'
+            f.feed_title = entry['title'] or 'asd'            
             fm.session.add(f)
             urls.append(f.mongo_feed_id)
 
     fm.session.commit()
-
-    all_feeds = fm.session.query(FeedUser,Feeds).filter(FeedUser.id == user.id).filter(FeedUser.id == Feeds.feed_user_id).all()
-    uniqueTags = list(set([asd[1].tags[0] for asd in all_feeds]))
-    return uniqueTags
+    return True
     
 @app.route(app.config['TWITTER_REDIRECT_URI'])
 @twitter.authorized_handler
@@ -179,14 +150,6 @@ def get_access_token():
 def get_twitter_access_token():
     return session.get('access_token')
     
-# @app.route('/')
-# def index_page():
-#     import opml
-#     #outline = opml.parse("/home/arjuna/feedr/Reader/subscriptions.xml")
-#     outline = opml.parse("/home/cs/Projects/hqfeed/subscriptions.xml")
-#     return render_template('layout.html', outline=outline)
-
-
 @app.route('/show_feed_entries/', methods=['POST'])
 def feed_entries():
     import feedparser
