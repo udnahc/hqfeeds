@@ -33,7 +33,7 @@ class FeedUser(Base,UserMixin):
     oauth_id = Column(String)
     active = Column('active', Boolean(), default=True)
 
-    feeds = relationship("Feeds", backref="feeduser")
+#    feeds = relationship("Feeds", backref="feeduser")
 
     def __init__(self, oauth_id, name, password, email):
         self.oauth_id = oauth_id
@@ -65,7 +65,7 @@ class FeedUser(Base,UserMixin):
         else:
             usr_id = data['id']
         if 'name' in data:
-            nme = data['name']
+            name = data['name']
         else:
             nme = ''
         if 'password' in data:
@@ -84,13 +84,8 @@ class FeedUser(Base,UserMixin):
 class Feeds(Base):
     __tablename__ = 'feeds'
 
-    feed_user_id = Column(Integer, ForeignKey('feed_user.id', ondelete="CASCADE"), nullable=False, index=True)
-    FeedUser = relationship("FeedUser", backref=backref('feedusers', order_by='Feeds.id'))
     mongo_feed_id = Column(String, nullable = False)
     feed_title = Column(String)    
-    feed_label = Column(String)
-    is_read = Column(Boolean, nullable =True)
-    is_starred = Column(Boolean, nullable = True)
 
     # many to many Feeds<->Tag
     tags = relationship('Tag', secondary=feeds_tags, backref='feeds')
@@ -120,13 +115,14 @@ class FeedsUpdate(Base):
     def __repr__(self):
         return '<FeedsUpdate({0})>'.format(self.feed_url)
     
-engine = create_engine('sqlite:///hqfeed.db', echo=True)
+engine = create_engine('sqlite:////home/cs/Projects/hqfeed/feedr/hqfeed.db', echo=True)
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 #t = FeedUser(email='chandu@hqfeed.com',name='Chandrashekar Jayaraman', password="something")
 #t = session.query(FeedUser)[0]
+import pdb; pdb.set_trace()
 #f = Feeds(FeedUser=f,name='Mathematics')
 
 #conn = engine.connect()
