@@ -107,7 +107,7 @@ def google_callback(resp):
 
 def create_entries(outline=None,user=''):
     urls = []
-    tags = [entry['categories'][0]['label'] for entry in outline]
+    tags = [entry['categories'][0]['label'] for entry in outline if entry['categories']]
     tags = list(set(tags))
     tagObjs = [Tag(tag) for tag in tags]
     fm.session.add_all(tagObjs)
@@ -115,15 +115,17 @@ def create_entries(outline=None,user=''):
     tagsMapping = [{tagObj.id:[tagObj.tag,tagObj]} for tagObj in tagObjs]
 
     for entry in outline:
-        if 'htmlUrl' in entry:
-            f = Feeds(FeedUser=user)
-            f.is_read = False
-            f.is_starred = False
-            f.tags = [tagsMap.values()[0][1] for tagsMap in tagsMapping if tagsMap.values()[0][0] == entry['categories'][0]['label']]
-            f.mongo_feed_id = entry['htmlUrl'] or 'asd'
-            f.feed_title = entry['title'] or 'asd'            
-            fm.session.add(f)
-            urls.append(f.mongo_feed_id)
+        if entry['categories']:
+            if 'htmlUrl' in entry:
+                f = Feeds(FeedUser=user)
+                f.is_read = False
+                f.is_starred = False
+                f.tags = [tagsMap.values()[0][1] for tagsMap in tagsMapping if tagsMap.values()[0][0] == entry['categories'][0]['label']]
+                f.mongo_feed_id = entry['htmlUrl'] or 'asd'
+                f.feed_title = entry['title'] or 'asd'            
+                fm.session.add(f)
+                urls.append(f.mongo_feed_id)
+        continue
 
     fm.session.commit()
     return True
