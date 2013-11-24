@@ -2,14 +2,23 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, Float, String, DateTime, Boolean, Table
 from sqlalchemy import ForeignKey, UniqueConstraint, create_engine, ForeignKeyConstraint
 from sqlalchemy.orm import relationship, backref, sessionmaker
-from flask.ext.login import (UserMixin,AnonymousUser)
+from flask.ext.login import UserMixin
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import scoped_session
 
+
+engine = create_engine('sqlite:////home/cs/Projects/hqfeed/feedr/hqfeed.db', echo=True)
+
+Session = sessionmaker(bind=engine)
+dbsession = scoped_session(sessionmaker(autocommit=False,
+                                        autoflush=False,
+                                         bind=engine))
 class Base(object):
     id = Column(Integer, primary_key=True)
     
 Base = declarative_base(cls=Base)
+Base.query = dbsession.query_property()
 
 feeds_tags = Table('feeds_tags', Base.metadata,
                    Column('feeds_id', Integer, ForeignKey('feeds.id')),
@@ -81,6 +90,16 @@ class FeedUser(Base,UserMixin):
         session.commit()
         return user
 
+class User(Base):
+    __tablename__ = 'users'
+    id = Column('user_id', Integer, primary_key=True)
+    name = Column(String(60))
+    oauth_token = Column(String(200))
+    oauth_secret = Column(String(200))
+
+    def __init__(self, name):
+        self.name = name
+
 class Feeds(Base):
     __tablename__ = 'feeds'
 
@@ -102,9 +121,6 @@ class Tag(Base):
     def __repr__(self):
         return '<Tags({0})>'.format(self.tag)
         
-class Anonymous(AnonymousUser):
-    __tablename__ = "Anonymous"
-
 class FeedsUpdate(Base):
     __tablename__ = 'feeds_update'
 
@@ -115,15 +131,10 @@ class FeedsUpdate(Base):
     def __repr__(self):
         return '<FeedsUpdate({0})>'.format(self.feed_url)
     
-engine = create_engine('sqlite:////home/cs/Projects/hqfeed/feedr/hqfeed.db', echo=True)
-
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)
-session = Session()
 #t = FeedUser(email='chandu@hqfeed.com',name='Chandrashekar Jayaraman', password="something")
 #t = session.query(FeedUser)[0]
-import pdb; pdb.set_trace()
 #f = Feeds(FeedUser=f,name='Mathematics')
+Base.metadata.create_all(engine)
 
 #conn = engine.connect()
 #conn.execute(t)

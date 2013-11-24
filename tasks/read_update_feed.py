@@ -4,6 +4,8 @@ from pymongo import MongoClient
 import feedparser
 from datetime import datetime
 import logging
+import simplejson as json
+
 logging.basicConfig(level = logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -15,6 +17,7 @@ client = MongoClient('localhost', 27017)
 
 db = client.feeds
 collection = db.feeds_dump
+collection_title = db.feeds_meta
 
 @celery.task
 def check_and_parse_feed(url):
@@ -22,6 +25,7 @@ def check_and_parse_feed(url):
     feed_entry = {}
     feed = feedparser.parse(url)
     feed_entry['xmlUrl'] = url
+
     feed_entries = []
     for entry in feed['entries']:
         feed_entry['title'] = entry.title
@@ -37,5 +41,7 @@ def check_and_parse_feed(url):
             continue
         feed_entry['parsed_time'] = datetime.now()
         collection.insert(feed_entry, manipulate=False, safe=True)
+        collection_title.update({"xmlUrl":url}, {'$set': {'meta_info': feed.feed.title}}, upsert=True)
+
         logger.debug("Inserted link %s " % entry.link)
     logger.info("Done with  %s" % url)

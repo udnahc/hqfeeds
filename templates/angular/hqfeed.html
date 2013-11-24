@@ -1,0 +1,68 @@
+{%raw%}
+<html ng-app='hqFeedsApp'>
+  <head>
+    <title>HQ Feeds</title>
+  </head>
+  <body>
+    <div ng-view></div>
+  </body>
+
+  <script type="text/javascript" src="http://127.0.0.1:5000/static/angular.min.js"></script>
+  <script type="text/javascript" src="http://127.0.0.1:5000/static/top_nav_controller.js"></script>
+  {%endraw%}
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+  <script type="text/javascript"  src="{{ url_for('static', filename='jquery/jquery.js') }}"></script>
+  <script type="text/javascript"  src="{{ url_for('static', filename='bootstrap/js/feed_parser.js') }}"></script>
+  <script type="text/javascript"  src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script> 
+  <style type="text/css">
+    /* apply a natural box layout model to all elements */
+    * { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+    }
+
+    body, html {
+    height: 100%;
+    overflow: hidden;
+    }
+
+    .navbar-inner {
+    height: 40px;
+    }
+
+    .scrollable {
+    height: 100%;
+    overflow: auto;
+    }
+
+    .max-height {
+    height: 100%;
+    }
+
+    .no-overflow {
+    overflow: hidden;
+    }
+
+    .pad40-top {
+    padding-top: 40px;
+    }
+
+    .pad10-top {
+    padding-top: 10px;
+    }
+
+    .pad15-top {
+    padding-top: 15px;
+    }
+
+    .pad5-top {
+    padding-top: 5px;
+    }
+    .description-hidden {
+    display:None;
+    }  
+    
+  </style>
+</html>

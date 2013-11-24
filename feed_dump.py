@@ -6,7 +6,7 @@ import opml
 from feed_models import *
 from datetime import datetime 
 
-outline = opml.parse("/home/arjuna/feedr/Reader/subscriptions.xml")
+outline = opml.parse("~/Projects/hqfeed/subscriptions.xml")
 
 from pymongo import MongoClient
 client = MongoClient()
@@ -31,6 +31,7 @@ def create_entries():
             continue
 
         if hasattr(entry, '_outlines'):
+
             f.feed_label =  entry.text
             for ent in entry._outlines:
                 f.mongo_feed_id = ent.xmlUrl

@@ -1,0 +1,35 @@
+    <div class="container-fluid" style="margin-bottom: 15px;">
+      <div class="span12 row-fluid">
+        <!-- Controller for top nav comes here -->
+        <div ng-controller='TopNavController'>
+          <div ng-include="'http://127.0.0.1:5000/static/angular/Partials/ttop_nav.html'"></div>
+        </div>
+        <!-- Controller for top nav ends here -->
+      </div>
+    </div>
+    <div class="container-fluid max-height no-overflow" style="margin-top: 15px;">
+      <div class="row-fluid max-height">
+        <div class="span2 scrollable">
+	      <div class="pad15-top">
+            <!-- Controller for left nav comes here -->
+            <div ng-controller='LeftNavController'>
+              <div ng-include="'http://127.0.0.1:5000/static/angular/Partials/opml_info.html'"></div>            
+            </div>
+            <!-- Controller for left nav ends here -->
+	      </div>
+        </div>	 
+        <div class="span10 scrollable">
+	      <div class="pad10-top">
+	        <div id="right-nav">
+	          <div class="container">
+                <!-- Controller for center nav comes here -->
+                <div ng-controller='CenterScreenController'>
+                  {{ reader_content }}
+                </div>
+                <!-- Controller for center nav ends here -->
+	          </div>
+	        </div>
+	      </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <title>Feedr</title>
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:5000/static/bootstrap/css/bootstrap.css">
+    <script type="text/javascript"  src="http://127.0.0.1:5000/static/jquery/jquery.js"></script>
+    <script type="text/javascript"  src="http://127.0.0.1:5000/static/bootstrap/js/bootstrap.js"></script> 
+    <style type="text/css">
+      body, html {
+      height: 100%;
+      overflow: hidden;
+      }
+
+      .navbar-inner {
+      height: 40px;
+      }
+
+      .scrollable {
+      height: 100%;
+      overflow: auto;
+      }
+
+      .max-height {
+      height: 100%;
+      }
+
+      .no-overflow {
+      overflow: hidden;
+      }
+
+      .pad40-top {
+      padding-top: 40px;
+      }
+
+      .pad10-top {
+      padding-top: 10px;
+      }
+
+      .pad15-top {
+      padding-top: 15px;
+      }
+
+      .pad5-top {
+      padding-top: 5px;
+      }
+
+      .pad5-left {
+      padding-left: 5px;
+      }
+      .pad5-right {
+      padding-right: 5px;
+      }
+
+      .my-input
+      {
+      width: 100%;
+      padding: 4px 0 4px 0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-header">
+    <h1 class="text-center">Super simple Feed Reader</h1></div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span8">
+          <h1>DESCRIPTION</h1>
+          <ul style="margin-top:15px;list-style: none outside none;">
+            <li style="margin-bottom: 15px;padding-bottom:15px;border-bottom: 1px solid;"><a href="#"><i class="icon-ok-sign"></i></a>&nbsp;&nbsp;<strong>Read feeds</strong></li>
+            <li style="margin-bottom: 15px;padding-bottom:15px;border-bottom: 1px solid;"><a href="#"><i class="icon-ok-sign"></i></a>&nbsp;&nbsp;<strong>Organize your feeds</strong></li>
+            <li style="margin-bottom: 15px;padding-bottom:15px;border-bottom: 1px solid;"><a href="#"><i class="icon-ok-sign"></i></a>&nbsp;&nbsp;<strong>Share favorite links</strong></li>
+            <li style="margin-bottom: 15px;padding-bottom:15px;border-bottom: 1px solid;"><a href="#"><i class="icon-ok-sign"></i></a>&nbsp;&nbsp;<strong>Enjoy the super simple UI</strong></li>
+            <li style="margin-bottom: 15px;padding-bottom:15px;border-bottom: 1px solid;"><a href="#"><i class="icon-ok-sign"></i></a>&nbsp;&nbsp;<strong>Follow us on twitter</strong></li>
+            <li style="margin-bottom: 15px;padding-bottom:15px;border-bottom: 1px solid;"><a href="#"><i class="icon-ok-sign"></i></a>&nbsp;&nbsp;<strong>Send your feedback @ feedback@codecognition.com</strong></li>
+          </ul>
+        </div>
+
+        <div class="span4 well">
+          <div class="row-fluid">
+            <div class="span12">
+            <form id="loginPage" method="get" action="login">
+              <fieldset>
+                <legend>Login using</legend>
+                <fieldset>
+                  <div class="control-group">
+                    <div class="controls">
+                      <p>
+                        <button class="btn btn-large btn-primary btn-login" type="submit" value="google">Google</button>
+                        <button class="btn btn-large btn-primary btn-login" value="twitter" ng-click="callTwitterAuth();">Twitter</button>
+                      </p>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(document).ready(function() {
+        $('.btn-login').click(function(e) {
+            var input = $("<input>").attr("type", "hidden").attr("name", "logintype").val(e.currentTarget.value);
+            $('#loginPage').append($(input));
+            $('#loginPage').submit();
+            });
+        });
+      </script>
+    </body>
+  </html>

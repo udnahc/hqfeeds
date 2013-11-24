@@ -8,11 +8,13 @@ logger = logging.getLogger(__name__)
 
 def create_entries():
     outline = opml.parse("/home/cs/Projects/hqfeed/subscriptions.xml")
+    default_tag = Tag("hqfeed_default")
     for entry in outline:
-   
+
         if hasattr(entry, "xmlUrl"):
             f = Feeds()
-            f.mongo_feed_id = entry.xmlUrl
+            f.mongo_feed_id = entry.xmlUrl 
+            f.feed_title = entry.title
             session.add(f)
             continue
 
@@ -20,13 +22,18 @@ def create_entries():
             for ent in entry._outlines:
                 f = Feeds()
                 f.mongo_feed_id = ent.xmlUrl
+                f.feed_title = ent.title
+                f.tags = [Tag(entry.text)]
                 session.add(f)
 
     session.commit()
     print "Total feeds created ", session.query(Feeds).count()
 
 def delete_entries():
+    ss = feeds_tags.delete()
+    session.execute(ss)
     session.query(Feeds).delete()
+    session.query(Tag).delete()
 
 def parse_feed():
     all_feeds = session.query(Feeds).all()

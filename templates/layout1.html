@@ -2,12 +2,17 @@
 <head>
 <title></title>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
-<script type="text/javascript"  src="{{ url_for('static', filename='jquery-1.8.3.js') }}"></script>
+<script type="text/javascript"  src="{{ url_for('static', filename='jquery/jquery.js') }}"></script>
 <script type="text/javascript"  src="{{ url_for('static', filename='bootstrap/js/feed_parser.js') }}"></script>
 <script type="text/javascript"  src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script> 
-<!-- <link rel="stylesheet" type="text/css" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css"></link> -->
-<!-- <script type="text/javascript"  src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script> -->
  <style type="text/css">
+   /* apply a natural box layout model to all elements */
+   * { 
+       -moz-box-sizing: border-box; 
+       -webkit-box-sizing: border-box; 
+       box-sizing: border-box; 
+     }
+
             body, html {
                 height: 100%;
                 overflow: hidden;
@@ -45,18 +50,21 @@
             .pad5-top {
                 padding-top: 5px;
             }
-
+            .description-hidden {
+                display:None;
+            }  
+   
     </style>
 </head>
 <body>
-<div class="container-fluid">
-  <div class="span12">
+<div class="container-fluid" style="margin-bottom: 15px;">
+  <div class="span12 row-fluid">
     {%block top_nav%}
     {%include "top-nav.html"%}
     {%endblock%}
   </div>
 </div>
-<div class="container-fluid max-height no-overflow">
+<div class="container-fluid max-height no-overflow" style="margin-top: 15px;">
   <div class="row-fluid max-height">
        <div class="span2 scrollable">
 	 <div class="pad15-top">
