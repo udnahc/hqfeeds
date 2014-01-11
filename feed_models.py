@@ -8,8 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 
 
-engine = create_engine('sqlite:////home/cs/Projects/hqfeed/feedr/hqfeed.db', echo=True)
-
+engine = create_engine('sqlite:////jchandrashekar/Projects/hqfeeds/hqfeed2.db', echo=True)
 Session = sessionmaker(bind=engine)
 dbsession = scoped_session(sessionmaker(autocommit=False,
                                         autoflush=False,
@@ -62,7 +61,7 @@ class FeedUser(Base,UserMixin):
     @staticmethod
     def load(oauth_id):
         try:
-            user = session.query(FeedUser).filter_by(oauth_id=oauth_id).one()
+            user = dbsession.query(FeedUser).filter_by(oauth_id=oauth_id).one()
             return user
         except:
             return None
@@ -86,8 +85,8 @@ class FeedUser(Base,UserMixin):
         else:
             email = ''
         user = FeedUser(usr_id,nme,password,email)
-        session.add(user)
-        session.commit()
+        dbsession.add(user)
+        dbsession.commit()
         return user
 
 class User(Base):
@@ -131,10 +130,13 @@ class FeedsUpdate(Base):
     def __repr__(self):
         return '<FeedsUpdate({0})>'.format(self.feed_url)
     
-#t = FeedUser(email='chandu@hqfeed.com',name='Chandrashekar Jayaraman', password="something")
-#t = session.query(FeedUser)[0]
-#f = Feeds(FeedUser=f,name='Mathematics')
-Base.metadata.create_all(engine)
+#t = FeedUser(oauth_id="something", email='chandu@hqfeed.com',name='Chandrashekar Jayaraman', password="something")
+#dbsession.add(t)
+#dbsession.commit()
+#t = dbsession.query(FeedUser)[0]
+#print t
+#f = Feeds(FeedUser=t,name='Mathematics')
+#Base.metadata.create_all(engine)
 
 #conn = engine.connect()
 #conn.execute(t)

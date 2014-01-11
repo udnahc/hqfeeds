@@ -4,9 +4,9 @@ This is the python program that would read the feed from time to time and dump t
 import pymongo
 import opml
 from feed_models import *
-from datetime import datetime 
+from datetime import datetime
 
-outline = opml.parse("~/Projects/hqfeed/subscriptions.xml")
+outline = opml.parse("/jchandrashekar/Projects/hqfeeds/google-reader-subscriptions.xml")
 
 from pymongo import MongoClient
 client = MongoClient()
@@ -26,7 +26,7 @@ def create_entries():
         if hasattr(entry, "xmlUrl"):
             f.feed_label = "hqfeed_Default"
             f.mongo_feed_id = entry.xmlUrl
-            session.add(f)
+            dbsession.add(f)
             urls.append(f.mongo_feed_id)
             continue
 
@@ -35,13 +35,13 @@ def create_entries():
             f.feed_label =  entry.text
             for ent in entry._outlines:
                 f.mongo_feed_id = ent.xmlUrl
-                session.add(f)
+                dbsession.add(f)
                 urls.append(f.mongo_feed_id)
 
-    session.commit()
+    dbsession.commit()
 
 create_entries()
-all_feeds = session.query(Feeds).all()
+all_feeds = dbsession.query(Feeds).all()
 for feed in all_feeds:
     urls.append(feed.mongo_feed_id)
 

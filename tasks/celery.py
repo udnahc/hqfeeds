@@ -5,7 +5,7 @@ from celery import Celery
 celery = Celery('tasks.celery',
                 broker='amqp://',
                 backend='amqp://',
-                include=['feedr.tasks.read_update_feed'])
+                include=['tasks.read_update_feed'])
 
 # Optional configuration, see the application user guide.
 celery.conf.update(
