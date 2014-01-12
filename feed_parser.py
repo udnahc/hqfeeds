@@ -265,6 +265,26 @@ def remove_tag():
         collection.update({'user_name':input_dict['user_name']}, {"$pull" : {'listOfFeeds.%s' % tag : uri}}, upsert=True)
     return json.dumps({'info': 'tags_removed'})
 
+@app.route('/get_feeds_for_user', methods=['GET'])
+def get_feeds_for_user():
+    #input_dict = json.loads(request.data)
+    user_name = "udnahc"
+
+    from pymongo import MongoClient
+    client = MongoClient()
+    client = MongoClient('localhost', 27017)
+    db = client.feeds
+    collection = db.user_feeds_map
+    list_of_feeds = collection.find_one({'user_name': user_name})['listOfFeeds']
+    return json.dumps({'feeds': list_of_feeds})
+
+
+@app.route('/get_feed_entries')
+def view_feed_entries():
+        feeds_list = get_feeds_for_user()
+        return render_template('hqfeeds/inner/feeds_main.html', feeds_list=feeds_list)
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host="0.0.0.0",port=5000)
