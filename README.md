@@ -1,2 +1,4 @@
 hqfeeds
 =======
+
+Simple feed reader
