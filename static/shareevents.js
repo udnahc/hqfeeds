@@ -37,3 +37,4 @@ $('a.share').on('click', function(event) {
         popupObj.location = ""; // todo for our app like
     }
 });
+

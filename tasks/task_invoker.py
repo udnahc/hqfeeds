@@ -1,6 +1,6 @@
 from ..feed_models import *
 from datetime import datetime 
-from .read_update_feed import check_and_parse_feed
+from tasks.read_update_feed import check_and_parse_feed
 import logging
 import opml
 logging.basicConfig(level = logging.DEBUG)

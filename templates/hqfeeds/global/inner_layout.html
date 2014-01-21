@@ -3,9 +3,6 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='custom/hqfeeds.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/feed_parser.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
 </head>
 <body class="fill">
 <div class="container-fluid" style="margin-bottom: 15px;">
@@ -28,8 +25,10 @@
             <div class="span10 scrollable">
                 <div class="pad10-top">
                     <div id="right-nav">
-                        {%block right_nav%}
-                        {%endblock%}
+                        <div id="feed_content">
+                            {%block right_nav%}
+                            {%endblock%}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,5 +38,10 @@
 <div class="col-xs-12">
     {%include 'hqfeeds/inner/inner_footer.html'%}
 </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='services.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='hqevents.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/feed_parser.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
 </body>
 </html>

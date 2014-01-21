@@ -1,20 +1,15 @@
 <div id="feed_title" class="col-md-2">
+    {% for feeds in feeds_list_with_label.items() %}
     <div id="feed_meta">
-        <strong>Development</strong> &nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+        <strong>{{ feeds.0 }} </strong>&nbsp;<span class="glyphicon glyphicon-chevron-down"></span>
+        {% for uri in feeds.1 %}
+            <div>
+                &nbsp;&nbsp;<a class='feedlink' data-url="{{uri.1}}" data-label="{{ uri.0 }}">{{ uri.0 }}</a>
+            </div>
+        {% endfor %}
     </div>
-    <br/>
+    {% endfor %}
 
-    <div id="feed_meta">
-        <strong>Technology</strong> &nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
-    </div>
-    <br/>
-
-    <div id="feed_meta">
-        <strong>Humour</strong>&nbsp;<span class="glyphicon glyphicon-chevron-down"></span>
-
-        <div id="feed_1">&nbsp;&nbsp;Feed 1</div>
-        <div id="feed_2">&nbsp;&nbsp;Feed 2</div>
-    </div>
     <br/>
     <br/>
     <br/>

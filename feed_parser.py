@@ -1,6 +1,6 @@
 from flask import (Flask, redirect, url_for, session, render_template, flash,
                    request, make_response, g)
-from flask.ext.login import (LoginManager, login_user, logout_user, login_required,
+from flask.ext.login import (LoginManager, login_user,logout_user, login_required,
                              current_user)
 from flask.ext.oauth import OAuth
 import simplejson as json
@@ -12,6 +12,8 @@ from feed_models import Base,  FeedUser, Feeds, Tag, feeds_tags, User
 from feed_models import dbsession
 import feed_models as fm 
 import logging
+from collections import defaultdict
+import feedparser
 
 logging.basicConfig(level = logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -276,13 +278,48 @@ def get_feeds_for_user():
     db = client.feeds
     collection = db.user_feeds_map
     list_of_feeds = collection.find_one({'user_name': user_name})['listOfFeeds']
-    return json.dumps({'feeds': list_of_feeds})
+    return list_of_feeds
 
+@app.route('/fetch_feeds_for_url', methods=['POST'])
+def view_feeds_for_url():
+    input_dict = json.loads(request.data)
+    feed_label = input_dict['feed_label']
+    feed_uri = input_dict['feed_uri']
+
+    from pymongo import MongoClient
+    client = MongoClient()
+    client = MongoClient('localhost', 27017)
+    db = client.feeds
+    collection = db.feeds_dump
+    list_of_feeds = collection.find({'xmlUrl': feed_uri})
+    list_of_feeds_count = list_of_feeds.count()
+    feeds_list = []
+    for feeds in list_of_feeds:
+        feed_info = {}
+        feed_info['description'] = feeds['description']
+        feed_info['link'] = feeds['link']
+        feed_info['title'] = feeds['title']
+        feed_info['published_entry'] = feeds['parsed_time'].strftime("%Y-%m-%d %H:%M:%S")
+        feeds_list.append(feed_info)
+    return render_template('hqfeeds/inner/feed_details.html', list_of_feeds_count=list_of_feeds_count, feeds_list=feeds_list, feed_label=feed_label)
 
 @app.route('/get_feed_entries')
 def view_feed_entries():
-        feeds_list = get_feeds_for_user()
-        return render_template('hqfeeds/inner/feeds_main.html', feeds_list=feeds_list)
+        from pymongo import MongoClient
+        client = MongoClient()
+        client = MongoClient('localhost', 27017)
+        db = client.feeds
+        feeds_meta_collection = db.feeds_meta
+
+        o_feeds_list = get_feeds_for_user()
+        feeds_list_with_label = defaultdict(list)
+        print o_feeds_list
+        for feed_label, feeds_list in o_feeds_list.iteritems():
+            for feed in feeds_list:
+                    result = feeds_meta_collection.find_one({'xmlUrl': feed})
+                    feeds_list_with_label[feed_label].append((result['meta_info'], feed))
+        print feeds_list_with_label
+        return render_template('hqfeeds/inner/feeds_main.html', feeds_list=o_feeds_list, feeds_list_with_label=feeds_list_with_label)
 
 
 if __name__ == '__main__':

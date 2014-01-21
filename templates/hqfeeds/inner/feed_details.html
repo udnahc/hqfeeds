@@ -1,51 +1,23 @@
 <div id="all_feed_entries" class="col-md-10">
     <div class="row">
-        <h4> You are reading articles from YCombinator - 10</h4>
+        <h4> You are reading articles from {{ feed_label }} - {{ list_of_feeds_count }}</h4>
     </div>
     <div id="feed_entries">
-        <div id="blog_entry_1" class="row" style="border-bottom:1px solid; padding: 20px 0 10px 0;">
-            <div id="blog_entry_header_1">
-                <div class="col-md-8">
-                    Some Blog Header
+        {% for feed in feeds_list %}
+            <div id="blog_entry_1" class="row" style="border-bottom:1px solid; padding: 20px 0 10px 0;">
+                <div id="blog_entry_header">
+                    <div class="col-md-8">
+                        <a href="{{feed.link}}" target="_blank">{{ feed.title }}</a>
+                    </div>
+                    <div class="col-md-2">
+                        {{ feed.published_entry }}
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    12/7/2004
-                </div>
-            </div>
-
-            <div id="blog_entry_description_1" class="description-hidden">
-                <div class="col-md-10">
-                    Description of the blog
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div id="blog_entry_footer_1">
-                    {%include 'hqfeeds/inner/social_corner.html'%}
+                <br/>
+                <div id="blog_description">
+                    {{ feed.description|safe }}
                 </div>
             </div>
-        </div>
-
-        <div id="blog_entry_1" class="row" style="border-bottom:1px solid; padding: 20px 0 10px 0;">
-            <div id="blog_entry_header_1">
-                <div class="col-md-8">
-                    Some Blog Header
-                </div>
-                <div class="col-md-2">
-                    12/7/2004
-                </div>
-            </div>
-
-            <div id="blog_entry_description_1" class="description-hidden">
-                <div class="col-md-10">
-                    Description of the blog
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div id="blog_entry_footer_1">
-                    {%include 'hqfeeds/inner/social_corner.html'%}
-                </div>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 </div>
