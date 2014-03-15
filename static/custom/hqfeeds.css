@@ -10,3 +10,11 @@
 .feedlink:hover {
     cursor: pointer;
 }
+
+#options_menu {
+  position: fixed;
+  right: 100;
+  top: 90%;
+  width: 8em;
+  margin-top: -2.5em;
+}

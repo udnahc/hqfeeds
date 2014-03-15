@@ -33,7 +33,13 @@ def delete_entries():
     dbsession.query(Tag).delete()
 
 def parse_feed():
-    all_feeds = dbsession.query(Feeds).all()
+#    all_feeds = dbsession.query(Feeds).all()
+    from pymongo import MongoClient
+    client = MongoClient()
+    client = MongoClient('localhost', 27017)
+    db = client.feeds
+    db_collection = db.feeds_meta
+    all_feeds = db_collection.find()
     for feed in all_feeds:
-        logger.debug("Sending URL %s to task queue " % (feed.mongo_feed_id))
-        result = check_and_parse_feed.delay(feed.mongo_feed_id)
+        logger.debug("Sending URL %s to task queue " % (feed['xmlUrl']))
+        result = check_and_parse_feed.delay(feed['xmlUrl'])

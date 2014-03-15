@@ -4,7 +4,7 @@ from flask import (Flask, redirect, url_for, session, render_template, flash,
 #                             current_user)
 # from flask.ext.login import (LoginManager, login_user, logout_user, login_required,
 #                             current_user)
-from util_decorators import *
+#from util_decorators import *
 from flask.ext.oauth import OAuth
 import simplejson as json
 import requests
@@ -17,6 +17,7 @@ import feed_models as fm
 import logging
 from collections import defaultdict
 import feedparser
+from werkzeug import secure_filename
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -72,7 +73,7 @@ def get_access_token():
 
 
 @app.route('/', methods=['GET'])
-@login_required
+#@login_required
 def data_index():
     return redirect(url_for('view_feed_entries'))
 
@@ -83,11 +84,15 @@ def get_user_info():
         user_info = {'is_user_logged': True, 'logged_in_user': g.user.name}
     else:
         user_info = {'is_user_logged': False}
+
+    # TODO: This has to be removed post fixing login issues !!!!
+    user_info = {'is_user_logged': True, 'logged_in_user': 'Chandrashekar', 'logged_in_user_id':'some_id'}
+    # TODO: This has to be removed post fixing login issues !!!!
     return json.dumps(user_info)
 
 
 @app.route('/show_feed_entries/', methods=['POST'])
-@login_required
+#@login_required
 def feed_entries():
     import feedparser
     entries = None
@@ -228,7 +233,7 @@ def logout():
 
 
 @app.route('/add_feed', methods=['POST'])
-@login_required
+#@login_required
 def add_feed():
     uri = request.data
     from tasks.read_update_feed import check_and_parse_feed
@@ -238,7 +243,7 @@ def add_feed():
 
 
 @app.route('/subscribe', methods=['POST'])
-@login_required
+#@login_required
 def subscribe():
     input_dict = json.loads(request.data)
     from pymongo import MongoClient
@@ -256,7 +261,7 @@ def subscribe():
 
 
 @app.route('/add_tag', methods=['POST'])
-@login_required
+#@login_required
 def add_tag():
     input_dict = json.loads(request.data)
     tags = input_dict['tags']
@@ -276,7 +281,7 @@ def add_tag():
 
 
 @app.route('/remove_tag', methods=['POST'])
-@login_required
+#@login_required
 def remove_tag():
     input_dict = json.loads(request.data)
     tags = input_dict['tags']
@@ -296,9 +301,9 @@ def remove_tag():
 
 
 @app.route('/get_feeds_for_user', methods=['GET'])
-@login_required
+#@login_required
 def get_feeds_for_user():
-    user_name = "arjun"
+    user_name = "udnahc"
 
     from pymongo import MongoClient
     client = MongoClient()
@@ -306,20 +311,27 @@ def get_feeds_for_user():
     db = client.feeds
     collection = db.user_feeds_map
     list_of_feeds = collection.find_one({'user_name': user_name})['listOfFeeds']
-    return list_of_feeds
+    list_of_feeds = [
+        {'label': u'default',
+                        'feeds': [{'feed_label':'Hacker News', 'URI':u'https://news.ycombinator.com/rss'},
+                                  {'feed_label':'NDTV Recent', 'URI':u'http://feeds.feedburner.com/NDTV-LatestNews' }]},
+        {'label': u'Scalability',
+                        'feeds': [{'feed_label':'High Scalability', 'URI':u'http://highscalability.com/rss.xml'}]
+                    }]
 
-@app.route('/fetch_feeds_for_url', methods=['POST'])
-def view_feeds_for_url():
-    input_dict = json.loads(request.data)
-    feed_label = input_dict['feed_label']
-    feed_uri = input_dict['feed_uri']
+    return json.dumps(list_of_feeds)
+
+@app.route('/get_top_stories_for_user', methods=['GET'])
+#@login_required
+def get_top_stories_for_user():
+    user_name = "udnahc"
 
     from pymongo import MongoClient
     client = MongoClient()
     client = MongoClient('localhost', 27017)
     db = client.feeds
     collection = db.feeds_dump
-    list_of_feeds = collection.find({'xmlUrl': feed_uri})
+    list_of_feeds = collection.find().sort('parsed_time', -1).limit(20)
     list_of_feeds_count = list_of_feeds.count()
     feeds_list = []
     for feeds in list_of_feeds:
@@ -329,10 +341,40 @@ def view_feeds_for_url():
         feed_info['title'] = feeds['title']
         feed_info['published_entry'] = feeds['parsed_time'].strftime("%Y-%m-%d %H:%M:%S")
         feeds_list.append(feed_info)
-    return render_template('hqfeeds/inner/feed_details.html', list_of_feeds_count=list_of_feeds_count, feeds_list=feeds_list, feed_label=feed_label)
+    print feeds_list
+    return json.dumps(feeds_list)
+
+@app.route('/upload_opml_file', methods=['POST'])
+def parse_opml_file():
+        file = request.files['file']
+        outline = opml.parse(file.read())
+        pass
+
+@app.route('/fetch_feeds_for_url', methods=['POST'])
+def view_feeds_for_url():
+    input_dict = json.loads(request.data)
+    feed_uri = input_dict['feed_uri']
+
+    from pymongo import MongoClient
+    client = MongoClient('localhost', 27017)
+    db = client.feeds
+    collection = db.feeds_dump
+    list_of_feeds = collection.find({'xmlUrl': feed_uri}).sort(
+                "parsed_time", pymongo.DESCENDING)
+    list_of_feeds_count = list_of_feeds.count()
+    feeds_list = []
+    for feeds in list_of_feeds:
+        feed_info = {}
+        feed_info['description'] = feeds['description']
+        feed_info['link'] = feeds['link']
+        feed_info['title'] = feeds['title']
+        feed_info['published_entry'] = feeds['parsed_time'].strftime("%Y-%m-%d %H:%M:%S")
+        feeds_list.append(feed_info)
+    return json.dumps(feeds_list)
+    #return render_template('hqfeeds/inner/feed_details.html', list_of_feeds_count=list_of_feeds_count, feeds_list=feeds_list, feed_label=feed_label)
 
 @app.route('/get_feed_entries')
-@login_required
+#@login_required
 def view_feed_entries():
         from pymongo import MongoClient
         client = MongoClient()

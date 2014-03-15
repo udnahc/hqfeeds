@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 
 
-engine = create_engine('sqlite:////sarjun/instances/hqfeeds/hqfeeds.db', echo=True)
+engine = create_engine('sqlite:////jchandrashekar/Projects/hqfeeds/hqfeed2.db', echo=True)
 Session = sessionmaker(bind=engine)
 dbsession = scoped_session(sessionmaker(autocommit=False,
                                         autoflush=False,
