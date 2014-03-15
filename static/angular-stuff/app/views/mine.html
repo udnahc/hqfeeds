@@ -1,0 +1,10 @@
+
+<button class="btn btn-success mine" ng-click="myStocksCtrl.toggleFilter()" ng-hide="myStocksCtrl.filters.favorite">Show Mine</button>
+<button class="btn btn-success all" ng-click="myStocksCtrl.toggleFilter()" ng-show="myStocksCtrl.filters.favorite">Show All</button>
+
+<div class="row-fluid">
+  <div ng-repeat="stock in myStocksCtrl.stocks | filter:myStocksCtrl.filters"  class="mystock">
+    <div stock-widget stock-data="stock" when-toggle="myStocksCtrl.fetchStocks()">
+    </div>
+  </div>
+</div>
