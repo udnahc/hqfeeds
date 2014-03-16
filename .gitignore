@@ -40,3 +40,6 @@ nosetests.xml
 
 hqfeed.db
 mongodb/
+*.db
+
+python2.6.9/
