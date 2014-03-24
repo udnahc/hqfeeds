@@ -1,5 +1,5 @@
 <h5><strong>{{ feedInfoData.label }}</strong></h5>
 <div ng-repeat="feed in feedInfoData.feeds">
-<h6><a href="" ng-click="get_feeds_for_uri('{{feed.URI}}')">{{ feed.feed_label }}</a></h6>
+<h6><a href="" ng-click="get_feeds_for_uri('{{feed.URI}}', '{{ feedInfoData.label }}' , '{{feed.feed_label}}')">{{ feed.feed_label }}</a></h6>
 </div>
 

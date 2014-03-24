@@ -1,4 +1,54 @@
+<!--<div ng-controller="ModalDemoCtrl as modalDemoCtrl">-->
+    <!--<script type="text/ng-template" id="myModalContent.html">-->
+        <!--<div class="modal-header">-->
+            <!--<h3>Add a feed to your existing fields</h3>-->
+        <!--</div>-->
+        <!--<div class="modal-body">-->
+            <!--<form name="addFeedURL" action="POST">-->
+                <!--<input type="url" name="feed_url"/>-->
+                <!--<input type="text" name="category_text"/>-->
+                <!--<ul>-->
+                    <!--<li ng-repeat="item in items">-->
+                        <!--<a ng-click="selected.item = item">{{ item }}</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</form>-->
+            <!--Selected: <b>{{ selected.item }}</b>-->
+        <!--</div>-->
+        <!--<div class="modal-footer">-->
+            <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+            <!--<button class="btn btn-warning" ng-click="cancel()">Cancel</button>-->
+        <!--</div>-->
+    <!--</script>-->
+
+    <!--<button class="btn btn-default" ng-click="modalDemoCtrl.open()">Add Feed !!</button>-->
+    <!--<div ng-show="modalDemoCtrl.selected">Selection from a modal: {{ modalDemoCtrl.selected }}</div>-->
+<!--</div>-->
+
+<!--<div ng-controller="OPMLImportCtrl as opmlImportCtrl">-->
+    <!--<script type="text/ng-template" id="opmlImportCtrl.html">-->
+        <!--<div class="modal-header">-->
+            <!--<h3>Upload your opml file</h3>-->
+        <!--</div>-->
+        <!--<div class="modal-body">-->
+            <!--<input type="file" file-model="myFile"/>-->
+        <!--</div>-->
+        <!--<div class="modal-footer">-->
+            <!--<button class="btn btn-primary" ng-click="parse_opml()">Parse OPML</button>-->
+            <!--<button class="btn btn-warning" ng-click="cancel()">Cancel</button>-->
+        <!--</div>-->
+    <!--</script>-->
+
+    <!--<button class="btn btn-default" ng-click="opmlImportCtrl.open()">Import OPML !!</button>-->
+<!--</div>-->
+
 <div ng-controller="FeedsInfoCtrl as feedsInfoCtrl">
+
+    <div ng-show="feedsInfoCtrl.show_add_feeds">
+        <form name="feedUrlForm">
+            <input ng-model="hq_feed_url" required/><button type="submit">Subscribe</button>
+        </form>
+    </div>
     <div ng-repeat="feed in feedsInfoCtrl.feeds_info">
         <div feed-info feed_info_data="feed">
 

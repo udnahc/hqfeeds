@@ -1,23 +1,17 @@
 from flask import (Flask, redirect, url_for, session, render_template, flash,
                    request, make_response, g)
-#from flask.ext.login import (LoginManager, login_user,logout_user, login_required,
-#                             current_user)
-# from flask.ext.login import (LoginManager, login_user, logout_user, login_required,
-#                             current_user)
-#from util_decorators import *
 from flask.ext.oauth import OAuth
 import simplejson as json
 import requests
 import os
 import opml
+import datetime
 import pymongo
-from feed_models import Base,  FeedUser, Feeds, Tag, feeds_tags, User
-from feed_models import dbsession
-import feed_models as fm
 import logging
 from collections import defaultdict
 import feedparser
-from werkzeug import secure_filename
+
+from mongo_stuff import MongoLib
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -53,17 +47,23 @@ twitter = oauth.remote_app('twitter',
                            consumer_secret=app.config['TWITTER_CLIENT_SECRET']
                            )
 
+# This has to be initiated before request to make sure there is a fresh object everytime a request is made.
+mongo_lib = None
 
 @app.before_request
 def before_request():
     g.user = None
-    if 'user_id' in session:
-        g.user = User.query.get(session['user_id'])
+    global mongo_lib
+    mongo_lib = MongoLib()
+    if 'user' in session:
+        g.user = session['user']
 
 
 @app.after_request
 def after_request(response):
-    dbsession.remove()
+    # Invalidating the mongo lib object
+    global mongo_lib
+    mongo_lib = None
     return response
 
 
@@ -81,12 +81,12 @@ def data_index():
 @app.route('/get_logged_in_user_info', methods=['GET'])
 def get_user_info():
     if g.user:
-        user_info = {'is_user_logged': True, 'logged_in_user': g.user.name}
+        user_info = {'is_user_logged': True, 'logged_in_user': g.user['user_name']}
     else:
         user_info = {'is_user_logged': False}
 
     # TODO: This has to be removed post fixing login issues !!!!
-    user_info = {'is_user_logged': True, 'logged_in_user': 'Chandrashekar', 'logged_in_user_id':'some_id'}
+    #user_info = {'is_user_logged': True, 'logged_in_user': 'Chandrashekar', 'logged_in_user_id':'some_id'}
     # TODO: This has to be removed post fixing login issues !!!!
     return json.dumps(user_info)
 
@@ -187,6 +187,28 @@ def loginaction():
         return google.authorize(callback=url_for('google_callback', _external=True))
 
 
+def login_or_create_user(json_data):
+    from pymongo import MongoClient
+    client = MongoClient()
+    client = MongoClient('localhost', 27017)
+    db = client.feeds
+    collection = db.user_info
+
+    # Check if the user exists in the mongo db
+    user_info = collection.find_one({'user_email': json_data['email']})
+    if not user_info:
+        # Else create a profile for this user
+        user_data = {"user_name": json_data['name'], "user_email": json_data['email'], "last_logged_in": datetime.datetime.now()}
+        collection.insert(user_data)
+        user_info = collection.find_one({'user_email': json_data['email']})
+        session['user'] = user_info
+        login_user(user_info)
+    else:
+        # If yes log the user in
+        session['user'] = user_info
+        print session
+    return user_info
+
 @app.route(app.config['REDIRECT_URI'])
 @google.authorized_handler
 def google_callback(resp):
@@ -200,15 +222,11 @@ def google_callback(resp):
             headers={'Authorization': 'OAuth ' + access_token})
 
     jsondata = googleaccess.json()
-    user = User.query.filter_by(email=jsondata['email']).first()
-    # user never signed on
-    if user is None:
-        user = User(name=jsondata['name'],
-                    email=jsondata['email'], oauth_token=access_token)
-        dbsession.add(user)
-    dbsession.commit()
-    session['user_id'] = user.id
-    return redirect(url_for('view_feed_entries'))
+
+    user_info = login_or_create_user(jsondata)
+    user_info["_id"] = str(user_info["_id"] )
+    user_info["last_logged_in"] = str(user_info["last_logged_in"])
+    return json.dumps(user_info)
 
 
 @app.route('/login_with_twitter')
@@ -228,7 +246,7 @@ def thanks():
 
 @app.route('/logout', methods=['GET'])
 def logout():
-    session.pop('user_id', None)
+    session.pop('user', None)
     return json.dumps({'status': 'done'})
 
 
@@ -264,9 +282,10 @@ def subscribe():
 #@login_required
 def add_tag():
     input_dict = json.loads(request.data)
-    tags = input_dict['tags']
-    uri = input_dict['feed_name']
-    user_name = input_dict['user_name']
+    tags = input_dict['feed_tags']
+    uri = input_dict['feed_url']
+
+    user_name = g.user['user_email']
 
     for tag in tags:
         from pymongo import MongoClient
@@ -275,7 +294,7 @@ def add_tag():
 
         db = client.feeds
         collection = db.user_feeds_map
-        collection.update({'user_name': input_dict['user_name']},
+        collection.update({'user_name': user_name},
                           {"$addToSet": {'listOfFeeds.%s' % tag: uri}}, upsert=True)
     return json.dumps({'info': 'tags_added'})
 
@@ -303,23 +322,29 @@ def remove_tag():
 @app.route('/get_feeds_for_user', methods=['GET'])
 #@login_required
 def get_feeds_for_user():
-    user_name = "udnahc"
-
     from pymongo import MongoClient
     client = MongoClient()
     client = MongoClient('localhost', 27017)
     db = client.feeds
     collection = db.user_feeds_map
-    list_of_feeds = collection.find_one({'user_name': user_name})['listOfFeeds']
-    list_of_feeds = [
-        {'label': u'default',
-                        'feeds': [{'feed_label':'Hacker News', 'URI':u'https://news.ycombinator.com/rss'},
-                                  {'feed_label':'NDTV Recent', 'URI':u'http://feeds.feedburner.com/NDTV-LatestNews' }]},
-        {'label': u'Scalability',
-                        'feeds': [{'feed_label':'High Scalability', 'URI':u'http://highscalability.com/rss.xml'}]
-                    }]
+    list_of_feeds = collection.find_one({'user_name': g.user['user_email']})['listOfFeeds']
+    #list_of_feeds = [
+    #    {'label': u'default',
+    #                    'feeds': [{'feed_label':'Hacker News', 'URI':u'https://news.ycombinator.com/rss'},
+    #                              {'feed_label':'NDTV Recent', 'URI':u'http://feeds.feedburner.com/NDTV-LatestNews' }]},
+    #    {'label': u'Scalability',
+    #                    'feeds': [{'feed_label':'High Scalability', 'URI':u'http://highscalability.com/rss.xml'}]
+    #                }]
+    list_of_feeds_export = []
+    for feed_label, feeds_list in list_of_feeds.iteritems():
+        feed_info = {}
+        feed_info['label'] = feed_label
+        feed_info['feeds'] = []
+        for feed in feeds_list:
+            feed_info['feeds'].append({"feed_label" : db.feeds_meta.find_one({"xmlUrl":feed})['meta_info'], "URI":feed })
+        list_of_feeds_export.append(feed_info)
 
-    return json.dumps(list_of_feeds)
+    return json.dumps(list_of_feeds_export)
 
 @app.route('/get_top_stories_for_user', methods=['GET'])
 #@login_required
@@ -341,56 +366,34 @@ def get_top_stories_for_user():
         feed_info['title'] = feeds['title']
         feed_info['published_entry'] = feeds['parsed_time'].strftime("%Y-%m-%d %H:%M:%S")
         feeds_list.append(feed_info)
-    print feeds_list
     return json.dumps(feeds_list)
 
 @app.route('/upload_opml_file', methods=['POST'])
 def parse_opml_file():
         file = request.files['file']
-        outline = opml.parse(file.read())
-        pass
+        outline = opml.parse(file)
+        logged_in_user_id = g.user['user_email']
+
+        from feeds_helper import import_opml_file
+        try:
+            import_opml_file(logged_in_user_id, file, mongo_lib)
+            return json.dumps({"message":"OPML imported successfully"})
+        except Exception,e:
+            return json.dumps({"message":"Could not import OPML file"})
+
+@app.route('/get_feed_labels_for_user', methods=['GET'])
+def get_feed_labels_for_user():
+    feed_labels = mongo_lib.get_feed_labels_for_user(g.user['user_email'])
+    print feed_labels
+    return json.dumps(feed_labels)
 
 @app.route('/fetch_feeds_for_url', methods=['POST'])
 def view_feeds_for_url():
     input_dict = json.loads(request.data)
     feed_uri = input_dict['feed_uri']
-
-    from pymongo import MongoClient
-    client = MongoClient('localhost', 27017)
-    db = client.feeds
-    collection = db.feeds_dump
-    list_of_feeds = collection.find({'xmlUrl': feed_uri}).sort(
-                "parsed_time", pymongo.DESCENDING)
-    list_of_feeds_count = list_of_feeds.count()
-    feeds_list = []
-    for feeds in list_of_feeds:
-        feed_info = {}
-        feed_info['description'] = feeds['description']
-        feed_info['link'] = feeds['link']
-        feed_info['title'] = feeds['title']
-        feed_info['published_entry'] = feeds['parsed_time'].strftime("%Y-%m-%d %H:%M:%S")
-        feeds_list.append(feed_info)
+    feeds_list = mongo_lib.get_entries_for_a_particular_feed(feed_uri,feed_no_limit=20)
     return json.dumps(feeds_list)
-    #return render_template('hqfeeds/inner/feed_details.html', list_of_feeds_count=list_of_feeds_count, feeds_list=feeds_list, feed_label=feed_label)
 
-@app.route('/get_feed_entries')
-#@login_required
-def view_feed_entries():
-        from pymongo import MongoClient
-        client = MongoClient()
-        client = MongoClient('localhost', 27017)
-        db = client.feeds
-        feeds_meta_collection = db.feeds_meta
-
-        o_feeds_list = get_feeds_for_user()
-        feeds_list_with_label = defaultdict(list)
-        print o_feeds_list
-        for feed_label, feeds_list in o_feeds_list.iteritems():
-            for feed in feeds_list:
-                    result = feeds_meta_collection.find_one({'xmlUrl': feed})
-                    feeds_list_with_label[feed_label].append((result['meta_info'], feed))
-        print feeds_list_with_label
-        return render_template('hqfeeds/inner/feeds_main.html', feeds_list=o_feeds_list, feeds_list_with_label=feeds_list_with_label)
 
 if __name__ == '__main__':
     app.debug = True

@@ -28,7 +28,20 @@
 
 <div ng-controller="AppCtrl as appCtrl">
     <div class="alert alert-info" ng-show="appCtrl.alertService.get()" ng-bind="appCtrl.alertService.get()"></div>
-    <div ng-view></div>
+    <div class="container-fluid" style="margin-bottom: 15px;">
+        <div class="span12 row-fluid">
+            <div ng-include src="'views/top_nav.html'"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2"><div ng-include src="'views/feeds_info.html'">
+    </div></div>
+    <div class="col-md-10">    <section ui-view=""></section>
+
+    </div></div>
+</div>
 </div>
 
 <script src="scripts/vendors/jquery.js"></script>
@@ -38,6 +51,9 @@
 <script src="scripts/vendors/bootstrap.js"></script>
 <script src="scripts/vendors/angular-route.js"></script>
 <script src="scripts/vendors/angular-animate.js"></script>
+<script src="scripts/vendors/angular-ui-router.js"></script>
+<script src="scripts/vendors/checklist-model.js"></script>
+<script src="scripts/ui-bootstrap-tpls-0.10.0.min.js"></script>
 
 <!-- build:js scripts/plugins.js -->
 <script src="scripts/app.js"></script>

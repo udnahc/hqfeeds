@@ -1,5 +1,5 @@
 from ..feed_models import *
-from datetime import datetime 
+from datetime import datetime
 from tasks.read_update_feed import check_and_parse_feed
 import logging
 import opml
@@ -12,7 +12,7 @@ def create_entries():
     for entry in outline:
         if hasattr(entry, "xmlUrl"):
             f = Feeds()
-            f.mongo_feed_id = entry.xmlUrl 
+            f.mongo_feed_id = entry.xmlUrl
             f.feed_title = entry.title
             dbsession.add(f)
             continue
@@ -41,5 +41,5 @@ def parse_feed():
     db_collection = db.feeds_meta
     all_feeds = db_collection.find()
     for feed in all_feeds:
-        logger.debug("Sending URL %s to task queue " % (feed['xmlUrl']))
+        print "Sending URL %s to task queue " % (feed['xmlUrl'])
         result = check_and_parse_feed.delay(feed['xmlUrl'])

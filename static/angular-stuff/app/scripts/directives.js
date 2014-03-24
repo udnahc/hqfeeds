@@ -105,9 +105,9 @@ angular.module('stockMarketApp').directive('stockWidget', ['StockService', 'User
                         return $scope.feed_info_data;
                     };
 
-                    $scope.get_feeds_for_uri = function(uri_info) {
+                    $scope.get_feeds_for_uri = function(uri_info, uri_label, feed_label) {
                         console.log("This is the URI to be obtianed " , uri_info);
-                        FeedsService.set_feed_uri (uri_info);
+                        FeedsService.set_feed_uri (uri_info, uri_label, feed_label);
                         $rootScope.$broadcast("UPDATE_FEED_DETAILS","");
                         console.log("Emitting signal to update changes everywhere ");
                     };
@@ -119,4 +119,19 @@ angular.module('stockMarketApp').directive('stockWidget', ['StockService', 'User
 
                 }
             };
+        }]).directive('fileModel', ['$parse', function ($parse) {
+        return {
+            restrict: 'A',
+            link: function($scope, $element, $attrs) {
+                var model = $parse($attrs.fileModel);
+                var modelSetter = model.assign;
+
+                $element.bind('change', function(){
+                    $scope.$apply(function(){
+                        modelSetter($scope, $element[0].files[0]);
+                        $scope.setFile($scope.myFile);
+                    });
+                });
+            }
+        };
         }]);

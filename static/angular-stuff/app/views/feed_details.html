@@ -1,4 +1,5 @@
 <div ng-controller="FeedsDetailsCtrl as feedsDetailsCtrl">
+    <h3>{{ feedsDetailsCtrl.currently_reading_label }} | {{ feedsDetailsCtrl.currently_reading_feed_label }}</h3>
     <div ng-repeat="feed in feedsDetailsCtrl.detailed_feed_info">
         <div feed-details feed-details-data="feed">
 

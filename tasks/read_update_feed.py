@@ -20,6 +20,8 @@ collection = db.feeds_dump
 collection_title = db.feeds_meta
 
 def sanitize_content(description):
+    if not description:
+        return None
     import lxml.html
     html = lxml.html.fromstring(description)
     for tag in html.xpath('//*[@class]'):
