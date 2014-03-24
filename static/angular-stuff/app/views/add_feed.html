@@ -1,0 +1,26 @@
+<div ng-controller="AddFeedCtrl as addFeedCtrl">
+    <div class="modal-header">
+        <h3>Add a feed to your existing feeds</h3>
+    </div>
+    <form role="form" name="addFeedURL" ng-submit="addFeedCtrl.ok(feed)">
+        <div class="form-group">
+            <label for="feedURL">Feed URL</label>
+            <input type="url" class="form-control" id="feedURL" placeholder="Feed URL" ng-model="feed.feed_url">
+        </div>
+        <div class="form-group">
+            <label for="addNewTags">Add New Tags ( separated by commas )</label>
+            <input type="text" class="form-control" id="addTags" placeholder="Add Tags" ng-model="feed.custom_feed_tags">
+        </div>
+
+        <label ng-repeat="item in addFeedCtrl.items">
+            <input type="checkbox"
+                   checklist-model="feed.feed_tags"
+                   checklist-value="item"> {{item}}
+        </label>
+        <br/>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="addFeedCtrl.ok(feed)">OK</button>
+            <button class="btn btn-warning" ng-click="addFeedCtrl.cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

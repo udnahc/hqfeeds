@@ -1,0 +1,10 @@
+<div ng-controller="OPMLImportCtrl as opmlImportCtrl">
+
+    <div class="modal-body">
+        <input type="file" file-model="myFile"/>
+    </div>
+    <div>
+        <button class="btn btn-primary" ng-click="opmlImportCtrl.parseOpml()">Parse OPML</button>
+        <button class="btn btn-warning" ng-click="opmlImportCtrl.cancel()">Cancel</button>
+    </div>
+</div>
